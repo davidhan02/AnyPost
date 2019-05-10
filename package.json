@@ -1,0 +1,14 @@
+{
+  "name": "myboilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for full stack MERN application.",
+  "main": "server",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "David Han",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
