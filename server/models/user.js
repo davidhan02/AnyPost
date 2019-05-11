@@ -33,6 +33,7 @@ userSchema.set('toJSON', { getters: true });
 userSchema.options.toJSON.transform = (doc, ret) => {
   const obj = { ...ret };
   delete obj.password;
+  delete obj.oauthId;
   delete obj._id;
   delete obj.__v;
   return obj;
