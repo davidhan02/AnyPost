@@ -1,4 +1,5 @@
 const app = require('./setup');
+const express = require('express');
 
 require('./routes/authRoutes')(app);
 
