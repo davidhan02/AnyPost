@@ -2,12 +2,13 @@
   "name": "myboilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for full stack MERN application.",
-  "main": "server",
+  "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "David Han",
   "license": "MIT",
