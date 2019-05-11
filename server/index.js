@@ -3,14 +3,6 @@ const express = require('express');
 
 require('./routes/authRoutes')(app);
 
-app.get('/', (req, res) => {
-  res.send('Index goes here');
-});
-
-app.get('/surveys', (req, res) => {
-  res.send('Logged in');
-});
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
