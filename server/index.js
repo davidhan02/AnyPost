@@ -1,4 +1,4 @@
-const path = rquire('path');
+const path = require('path');
 const app = require('./setup');
 const express = require('express');
 
