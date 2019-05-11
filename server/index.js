@@ -8,14 +8,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {
-    res.sendFile(
-      path.resolve(
-        'https://tranquil-citadel-17264.herokuapp.com',
-        'client',
-        'build',
-        'index.html'
-      )
-    );
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
   });
 }
 
