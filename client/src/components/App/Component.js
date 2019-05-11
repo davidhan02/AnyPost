@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../../styles/globalStyle';
 import history from '../../utils/history';
 import theme from '../../styles/theme';
 import React from 'react';
@@ -13,7 +14,8 @@ const App = ({ dark }) => (
   <ThemeProvider theme={theme(dark)}>
     <Router history={history}>
       <>
-        <Header />
+        <GlobalStyle />
+        <Route component={Header} />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/surveys" component={SurveyNew} />
