@@ -34,12 +34,14 @@ userSchema.set('toJSON', { getters: true });
 userSchema.options.toJSON.transform = (doc, ret) => {
   const obj = { ...ret };
   delete obj.password;
+  delete obj.oauthId;
+  delete obj._id;
   delete obj.__v;
   return obj;
 };
 
 userSchema.pre('save', async function(next) {
-  this.password = await bcrypt.hash(this.password, 10);
+  if (this.password) this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 

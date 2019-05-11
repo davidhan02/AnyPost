@@ -7,25 +7,20 @@ const express = require('express');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(bodyParser.json());
-app.use(
-  cookieSession({
-    maxAge: 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
-  })
-);
+require('./services/passport');
+require('./models/user');
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
   useCreateIndex: true
 });
 
-require('./services/passport');
-require('./models/user');
+const options = { maxAge: 7200000, keys: [keys.cookieKey] };
 
-require('./routes/authRoutes')(app);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieSession(options));
+app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 module.exports = app;
