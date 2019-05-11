@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "App Boilerplate",
+  "name": "Full Stack MERN App Boilerplate",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
