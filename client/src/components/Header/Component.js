@@ -11,9 +11,13 @@ const Wrapper = styled.header`
   justify-content: space-between;
   margin-bottom: 20px;
 
+  box-shadow: 0 4px 12px ${props => props.theme.shadow};
+  border-bottom: 1px solid ${props => props.theme.border};
+
   height: 48px;
   padding: 0 10vw;
-  background-color: #d3d3d3;
+  color: ${props => props.theme.normalText};
+  background-color: ${props => props.theme.foreground};
   user-select: none;
 
   @media (max-width: 425px) {
@@ -28,7 +32,7 @@ const Wrapper = styled.header`
 
 const Header = props => (
   <Wrapper>
-    <h3>CompanyName</h3>
+    <span>CompanyName</span>
     <a href="/auth/google">Log in</a>
   </Wrapper>
 );
