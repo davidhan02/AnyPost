@@ -16,7 +16,6 @@ const Wrapper = styled.header`
 
   height: 48px;
   padding: 0 10vw;
-  color: ${props => props.theme.normalText};
   background-color: ${props => props.theme.foreground};
   user-select: none;
 
