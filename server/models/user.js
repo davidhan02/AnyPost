@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
 
-// Create Schema
 const userSchema = new Schema({
   name: {
     type: String
@@ -41,7 +40,9 @@ userSchema.options.toJSON.transform = (doc, ret) => {
 };
 
 userSchema.pre('save', async function(next) {
-  if (this.password) this.password = await bcrypt.hash(this.password, 10);
+  if (this.password) {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
   next();
 });
 
