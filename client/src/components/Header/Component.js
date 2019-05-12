@@ -2,6 +2,8 @@ import React from 'react';
 import HeaderLogo from './Logo';
 import styled from 'styled-components/macro';
 import HeaderDarkButton from './DarkButton';
+import HeaderNavLink from './NavLink';
+import HeaderUsername from './Username';
 
 const Wrapper = styled.header`
   position: sticky;
@@ -9,7 +11,7 @@ const Wrapper = styled.header`
   top: 0;
 
   display: flex;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 20px;
 
   box-shadow: 0 4px 12px ${props => props.theme.shadow};
@@ -36,11 +38,15 @@ const Header = ({ auth, logout, toggleTheme }) => (
     <HeaderDarkButton toggle={toggleTheme} />
     {auth.isAuthenticated ? (
       <>
-        <span>Hi {auth.user.name}</span>
-        <span onClick={() => logout()}>Logout</span>
+        <HeaderUsername user={auth.user} />
+        <HeaderNavLink as="span" onClick={logout}>
+          Logout
+        </HeaderNavLink>
       </>
     ) : (
-      <a href="/auth/google">Login</a>
+      <HeaderNavLink as="a" href="/auth/google">
+        Login
+      </HeaderNavLink>
     )}
   </Wrapper>
 );
