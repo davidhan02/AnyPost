@@ -11,7 +11,7 @@ const Wrapper = styled(HeaderNavLink)`
 `;
 
 const HeaderUsername = ({ user }) => (
-  <Wrapper to={`/user/${user.id}`}>
+  <Wrapper to="/dashboard">
     <HeaderUsernameText>{user.name}</HeaderUsernameText>
   </Wrapper>
 );

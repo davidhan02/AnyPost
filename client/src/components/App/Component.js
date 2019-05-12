@@ -6,9 +6,15 @@ import history from '../../utils/history';
 import theme from '../../styles/theme';
 import React from 'react';
 
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
-const Landing = () => <h2>Landing</h2>;
+import styled from 'styled-components/macro';
+
+const Placeholder = styled.h2`
+  text-align: center;
+`;
+
+const Dashboard = () => <Placeholder>Dashboard</Placeholder>;
+const SurveyNew = () => <Placeholder>SurveyNew</Placeholder>;
+const Landing = () => <Placeholder>Landing</Placeholder>;
 
 const App = ({ dark }) => (
   <Theme theme={theme(dark)}>
