@@ -8,7 +8,7 @@ const Logo = styled(Link)`
 
   color: ${props => props.theme.normalText};
 
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   margin-right: auto;
   text-decoration: none;
