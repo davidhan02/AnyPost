@@ -8,13 +8,13 @@ import { FETCH_USER } from './actions/types';
 import AppContainer from './components/App/Container';
 import * as serviceWorker from './utils/serviceWorker';
 
+let hasRendered = false;
+
 const jsx = (
   <Provider store={store}>
     <AppContainer />
   </Provider>
 );
-
-let hasRendered = false;
 
 const renderApp = () => {
   if (!hasRendered) {
