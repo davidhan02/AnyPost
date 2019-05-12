@@ -1,5 +1,7 @@
 import React from 'react';
+import HeaderLogo from './Logo';
 import styled from 'styled-components/macro';
+import HeaderDarkButton from './DarkButton';
 
 const Wrapper = styled.header`
   position: sticky;
@@ -8,7 +10,6 @@ const Wrapper = styled.header`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 20px;
 
   box-shadow: 0 4px 12px ${props => props.theme.shadow};
@@ -31,12 +32,12 @@ const Wrapper = styled.header`
 
 const Header = ({ auth, logout, toggleTheme }) => (
   <Wrapper>
-    <span>CompanyName</span>
-    <button onClick={() => toggleTheme()}>Theme</button>
+    <HeaderLogo />
+    <HeaderDarkButton toggle={toggleTheme} />
     {auth.isAuthenticated ? (
       <>
         <span>Hi {auth.user.name}</span>
-        <a onClick={() => logout()}>Logout</a>
+        <span onClick={() => logout()}>Logout</span>
       </>
     ) : (
       <a href="/auth/google">Login</a>
