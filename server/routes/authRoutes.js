@@ -23,6 +23,7 @@ module.exports = app => {
   });
 
   app.get('/api/current_user', (req, res) => {
+    if (!req.user) res.send({});
     res.send(req.user);
   });
 };
