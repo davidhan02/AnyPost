@@ -29,10 +29,18 @@ const Wrapper = styled.header`
   }
 `;
 
-const Header = props => (
+const Header = ({ auth, logout, toggleTheme }) => (
   <Wrapper>
     <span>CompanyName</span>
-    <a href="/auth/google">Log in</a>
+    <button onClick={() => toggleTheme()}>Theme</button>
+    {auth.isAuthenticated ? (
+      <>
+        <span>Hi {auth.user.name}</span>
+        <a onClick={() => logout()}>Logout</a>
+      </>
+    ) : (
+      <a href="/auth/google">Login</a>
+    )}
   </Wrapper>
 );
 
