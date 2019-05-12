@@ -26,12 +26,12 @@ npm run client
 # Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
 
-You will need to create a keys_dev.js in the server config folder with
+You will need to create a dev.js in the server config folder with
 
 ```
 module.exports = {
   googleClientID: 'YOUR_OWN_GOOGLE_CLIENT_ID',
-  googleClientSecret: 'YOUR_OWN_GOOGLE_CLIENT_SECRET',
+  googleClientSecret: 'YOUR_OWN_CLIENT_SECRET',
   mongoURI: 'YOUR_OWN_MONGO_URI',
   cookieKey: 'YOUR_OWN_COOKIE_KEY'
 };
