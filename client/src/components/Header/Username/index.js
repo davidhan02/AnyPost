@@ -1,19 +1,19 @@
 import React from 'react';
-import HeaderNavLink from '../NavLink';
-import HeaderUsernameText from './Text';
 import styled from 'styled-components/macro';
+import HeaderUsernameWrapper from './Wrapper';
+import { wideFont, overflow } from '../../../styles/helpers';
 
-const Wrapper = styled(HeaderNavLink)`
-  min-width: 0;
-  flex-shrink: 1;
-  border-left: 1px solid ${props => props.theme.border};
-  border-right: 1px solid ${props => props.theme.border};
+const HeaderUsernameText = styled.span`
+  ${wideFont};
+  ${overflow};
+
+  color: ${props => props.theme.mutedText};
 `;
 
 const HeaderUsername = ({ user }) => (
-  <Wrapper to="/dashboard">
+  <HeaderUsernameWrapper to="/dashboard">
     <HeaderUsernameText>{user.name}</HeaderUsernameText>
-  </Wrapper>
+  </HeaderUsernameWrapper>
 );
 
 export default HeaderUsername;
