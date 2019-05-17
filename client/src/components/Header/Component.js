@@ -35,7 +35,7 @@ const Wrapper = styled.header`
 const Header = ({ auth, logout, toggleTheme }) => (
   <Wrapper>
     <HeaderLogo />
-    <HeaderDarkButton toggle={toggleTheme} />
+    <HeaderDarkButton onClick={toggleTheme} />
     {auth.isAuthenticated ? (
       <>
         <HeaderUsername user={auth.user} />

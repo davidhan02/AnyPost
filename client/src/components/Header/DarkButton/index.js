@@ -16,8 +16,8 @@ const DarkButton = styled.span`
   }
 `;
 
-const HeaderDarkButton = ({ toggle }) => (
-  <DarkButton onClick={toggle}>
+const HeaderDarkButton = ({ onClick }) => (
+  <DarkButton onClick={onClick}>
     <HeaderDarkButtonIcon />
   </DarkButton>
 );
