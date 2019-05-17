@@ -2,7 +2,8 @@ const path = require('path');
 const app = require('./setup');
 const express = require('express');
 
-require('./routes/authRoutes')(app);
+require('./routes/api')(app);
+require('./routes/auth')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
