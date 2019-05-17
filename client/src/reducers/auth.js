@@ -3,7 +3,7 @@ import {
   SET_USER_LOADING,
   CLEAR_USER_LOADING
 } from '../actions/types';
-import isEmpty from '../utils/isEmpty';
+import { isEmpty } from '../utils/validators';
 
 const initialState = {
   isAuthenticated: false,
