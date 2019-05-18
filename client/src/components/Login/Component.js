@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import Form from '../shared/form/Form';
+import OAuthButton from './OAuthButton';
+import ServerError from '../shared/ServerError';
 import renderField from '../shared/form/renderField';
 import SubmitButton from '../shared/form/SubmitButton';
 import { emailValidator, passwordValidator } from '../../utils/validators';
@@ -27,6 +29,9 @@ class Login extends Component {
     const { error, loading, handleSubmit } = this.props;
     return (
       <Form loading={loading} onSubmit={handleSubmit(this.onSubmit)}>
+        <OAuthButton as="a" href="/auth/google">
+          sign in with google
+        </OAuthButton>
         <Field
           type="email"
           name="email"
@@ -41,7 +46,7 @@ class Login extends Component {
           component={renderField}
           validate={passwordValidator}
         />
-        {error && error.msg}
+        {error && <ServerError>{error.msg}</ServerError>}
         <SubmitButton type="submit">log in</SubmitButton>
       </Form>
     );
