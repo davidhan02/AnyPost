@@ -17,7 +17,7 @@ class Register extends Component {
     this.redirectIfLoggedIn();
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate() {
     this.redirectIfLoggedIn();
   }
 
