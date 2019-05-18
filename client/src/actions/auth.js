@@ -34,3 +34,19 @@ export const submitLogin = formValues => async dispatch => {
     });
   }
 };
+
+export const submitRegister = formValues => async dispatch => {
+  dispatch(setUserLoading());
+  try {
+    const user = await axios.post('/api/register', formValues);
+    dispatch({
+      type: FETCH_USER,
+      payload: user.data
+    });
+  } catch (err) {
+    dispatch({
+      type: SET_ERROR,
+      payload: err.response.data
+    });
+  }
+};
