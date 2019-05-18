@@ -6,9 +6,13 @@ const OAuthButton = styled(Button)`
   margin-bottom: 20px;
   padding: 12px 30px;
   text-align: center;
-  border: 1px solid ${props => props.theme.accent};
-  color: ${props => props.theme.accent};
+  border: 1px solid ${props => props.theme.mutedText};
+  color: ${props => props.theme.mutedText};
   background-color: transparent;
+
+  :hover {
+    border: 1px solid ${props => props.theme.accent};
+  }
 `;
 
 export default OAuthButton;

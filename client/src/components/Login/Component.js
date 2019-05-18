@@ -51,7 +51,7 @@ class Login extends Component {
           validate={passwordValidator}
         />
         {error && <ServerError>{error.msg}</ServerError>}
-        <SubmitButton type="submit">log in</SubmitButton>
+        <SubmitButton type="submit">sign in</SubmitButton>
       </Form>
     );
   }
