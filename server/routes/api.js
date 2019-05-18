@@ -1,8 +1,8 @@
 const users = require('./controllers/users');
 const router = require('express').Router();
 
-router.post('/login', users.login);
-router.get('/logout', users.logout);
+router.post('/login', users.loginUser);
+router.get('/logout', users.logoutUser);
 router.post('/register', users.register);
 router.get('/current_user', users.currentUser);
 

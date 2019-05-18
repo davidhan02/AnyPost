@@ -10,12 +10,12 @@ exports.currentUser = (req, res) => {
   res.send(req.user);
 };
 
-exports.logout = (req, res) => {
+exports.logoutUser = (req, res) => {
   req.logout();
   res.redirect('/');
 };
 
-exports.login = (req, res, next) => {
+exports.loginUser = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (!user) {
       return res.status(400).json(info);
