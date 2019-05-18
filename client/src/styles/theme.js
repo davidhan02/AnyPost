@@ -28,7 +28,7 @@ const light = {
   pageBackground: '#f4f6f8',
   voteButtonHover: '#f2f2f2',
   foreground: '#ffffff',
-  activeBackground: '#fafafa',
+  activeBackground: '#f0f0f0',
   inputBackground: '#fcfcfc',
   shadow: 'rgba(0, 0, 0, 0.05)'
 };
