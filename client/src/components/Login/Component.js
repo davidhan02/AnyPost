@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import Form from '../shared/form/Form';
-import OAuthButton from './OAuthButton';
+import OAuthButton from '../shared/OAuthButton';
 import ServerError from '../shared/ServerError';
 import renderField from '../shared/form/renderField';
 import SubmitButton from '../shared/form/SubmitButton';
