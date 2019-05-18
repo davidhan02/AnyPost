@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { FETCH_USER, SET_ERROR, SET_USER_LOADING } from './types';
+import { FETCH_USER, SET_ERROR, SET_USER_LOADING, CLEAR_ERROR } from './types';
+
+export const clearError = () => ({
+  type: CLEAR_ERROR
+});
 
 export const setUserLoading = () => ({
   type: SET_USER_LOADING

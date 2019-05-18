@@ -16,6 +16,10 @@ class Login extends Component {
     this.redirectIfLoggedIn();
   }
 
+  componentWillUnmount() {
+    this.props.clearError();
+  }
+
   redirectIfLoggedIn() {
     const { auth, history } = this.props;
     if (auth.isAuthenticated) history.push('/dashboard');
