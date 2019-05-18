@@ -1,5 +1,6 @@
 import { Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider as Theme } from 'styled-components';
+import RegisterContainer from '../Register/Container';
 import GlobalStyle from '../../styles/globalStyle';
 import HeaderContainer from '../Header/Container';
 import LoginContainer from '../Login/Container';
@@ -25,6 +26,7 @@ const App = ({ dark }) => (
         <HeaderContainer />
         <Switch>
           <Route path="/login" component={LoginContainer} />
+          <Route path="/register" component={RegisterContainer} />
           <Route exact path="/" component={Landing} />
           <Route path="/surveys" component={SurveyNew} />
           <Route path="/dashboard" component={Dashboard} />
