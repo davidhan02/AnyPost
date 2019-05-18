@@ -39,7 +39,7 @@ class Register extends Component {
     return (
       <Form loading={loading} onSubmit={handleSubmit(this.onSubmit)} wide>
         <OAuthButton as="a" href="/auth/google">
-          Register with Google
+          Quick register with Google
         </OAuthButton>
         <Field
           type="text"
