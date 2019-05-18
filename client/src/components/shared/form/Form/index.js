@@ -2,7 +2,7 @@ import React from 'react';
 import FormWrapper from './Wrapper';
 import styled from 'styled-components/macro';
 import { transition } from '../../../../styles/helpers';
-import Loading from '../Loading';
+import LoadingSpinner from '../Loading/Spinner';
 
 const StyledForm = styled.form`
   ${transition('filter')};
@@ -19,7 +19,7 @@ const StyledForm = styled.form`
 const Form = ({ className, wide, ...props }) => (
   <FormWrapper className={className} wide={wide}>
     <StyledForm {...props} />
-    {props.loading && <Loading />}
+    {props.loading && <LoadingSpinner />}
   </FormWrapper>
 );
 
