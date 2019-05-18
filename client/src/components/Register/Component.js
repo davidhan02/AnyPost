@@ -26,8 +26,8 @@ class Register extends Component {
   }
 
   redirectIfLoggedIn() {
-    const { auth, history } = this.props;
-    if (auth.isAuthenticated) history.push('/dashboard');
+    const { history, isAuthenticated } = this.props;
+    if (isAuthenticated) history.push('/dashboard');
   }
 
   onSubmit = formValues => {
@@ -35,9 +35,9 @@ class Register extends Component {
   };
 
   render() {
-    const { auth, error, handleSubmit } = this.props;
+    const { error, handleSubmit, loading } = this.props;
     return (
-      <Form loading={auth.loading} onSubmit={handleSubmit(this.onSubmit)}>
+      <Form loading={loading} onSubmit={handleSubmit(this.onSubmit)} wide>
         <OAuthButton as="a" href="/auth/google">
           Register with Google
         </OAuthButton>

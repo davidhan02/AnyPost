@@ -21,8 +21,8 @@ class Login extends Component {
   }
 
   redirectIfLoggedIn() {
-    const { auth, history } = this.props;
-    if (auth.isAuthenticated) history.push('/dashboard');
+    const { history, isAuthenticated } = this.props;
+    if (isAuthenticated) history.push('/dashboard');
   }
 
   onSubmit = formValues => {
@@ -30,11 +30,11 @@ class Login extends Component {
   };
 
   render() {
-    const { auth, error, handleSubmit } = this.props;
+    const { error, handleSubmit, loading } = this.props;
     return (
-      <Form loading={auth.loading} onSubmit={handleSubmit(this.onSubmit)}>
+      <Form loading={loading} onSubmit={handleSubmit(this.onSubmit)}>
         <OAuthButton as="a" href="/auth/google">
-          sign in with google
+          Log in with Google
         </OAuthButton>
         <Field
           type="email"
@@ -51,7 +51,7 @@ class Login extends Component {
           validate={passwordValidator}
         />
         {error && <ServerError>{error.msg}</ServerError>}
-        <SubmitButton type="submit">sign in</SubmitButton>
+        <SubmitButton type="submit">Log in</SubmitButton>
       </Form>
     );
   }
