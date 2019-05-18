@@ -11,6 +11,9 @@ const localStrategy = new LocalStrategy(
       if (!user) {
         return done(null, false, { msg: 'User not found' });
       }
+      if (!user.password) {
+        return done(null, false, { msg: 'Email already exists' });
+      }
       if (!user.isValidPassword(password)) {
         return done(null, false, { msg: 'Incorrect password' });
       }
