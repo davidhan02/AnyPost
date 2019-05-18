@@ -1,15 +1,11 @@
 export const checkIfTrimmed = value =>
-  value.trim() === value ? undefined : 'Cannot start or end with whitespace';
+  value.trim() === value ? undefined : 'Cannot start/end with space';
 
 export const checkMaxLength = (value, len) =>
-  value && value.length <= len
-    ? undefined
-    : `Must be less than ${len} characters`;
+  value && value.length <= len ? undefined : `Less than ${len} characters`;
 
 export const checkMinLength = (value, len) =>
-  value && value.length >= len
-    ? undefined
-    : `Must be more than ${len} characters`;
+  value && value.length >= len ? undefined : `More than ${len} characters`;
 
 export const isEmpty = value =>
   value === undefined ||
@@ -34,6 +30,6 @@ export const required = value => (value ? undefined : 'Required');
 
 export const emailValidator = [required, max(32), trimmed];
 
-export const passwordValidator = [required, min(6), max(32), trimmed];
-
 export const nameValidator = [required, min(2), max(25), trimmed];
+
+export const passwordValidator = [required, min(6), max(32), trimmed];
