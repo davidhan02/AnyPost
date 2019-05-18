@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { keyframes } from 'styled-components';
 import LoadingWrapper from './Wrapper';
 
 const spin = keyframes`

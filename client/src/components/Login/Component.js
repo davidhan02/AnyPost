@@ -24,7 +24,7 @@ class Login extends Component {
   };
 
   render() {
-    const { loading, handleSubmit } = this.props;
+    const { error, loading, handleSubmit } = this.props;
     return (
       <Form loading={loading} onSubmit={handleSubmit(this.onSubmit)}>
         <Field
@@ -41,6 +41,7 @@ class Login extends Component {
           component={renderField}
           validate={passwordValidator}
         />
+        {error && error.msg}
         <SubmitButton type="submit">log in</SubmitButton>
       </Form>
     );

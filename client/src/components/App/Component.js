@@ -2,6 +2,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider as Theme } from 'styled-components';
 import GlobalStyle from '../../styles/globalStyle';
 import HeaderContainer from '../Header/Container';
+import LoginContainer from '../Login/Container';
 import history from '../../utils/history';
 import theme from '../../styles/theme';
 import React from 'react';
@@ -23,6 +24,7 @@ const App = ({ dark }) => (
         <GlobalStyle />
         <HeaderContainer />
         <Switch>
+          <Route path="/login" component={LoginContainer} />
           <Route exact path="/" component={Landing} />
           <Route path="/surveys" component={SurveyNew} />
           <Route path="/dashboard" component={Dashboard} />
