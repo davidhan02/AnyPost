@@ -11,7 +11,10 @@ const localStrategy = new LocalStrategy(
       if (!user) {
         return done(null, false, { msg: 'User not found' });
       }
-      if (!user.password || !user.isValidPassword(password)) {
+      if (!user.passwordHash) {
+        return done(null, false, { msg: 'Login through OAuth' });
+      }
+      if (!user.isValidPassword(password)) {
         return done(null, false, { msg: 'Incorrect password' });
       }
       return done(null, user);

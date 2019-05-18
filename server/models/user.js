@@ -15,7 +15,7 @@ const userSchema = new Schema({
   avatar: {
     type: String
   },
-  password: {
+  passwordHash: {
     type: String
   },
   oauthId: {
@@ -32,23 +32,20 @@ userSchema.plugin(uniqueValidator);
 userSchema.set('toJSON', { getters: true });
 userSchema.options.toJSON.transform = (doc, ret) => {
   const obj = { ...ret };
-  delete obj.password;
+  delete obj.passwordHash;
   delete obj.oauthId;
   delete obj._id;
   delete obj.__v;
   return obj;
 };
 
-userSchema.pre('save', async function(next) {
-  if (this.password) {
-    this.password = await bcrypt.hash(this.password, 10);
-  }
-  next();
-});
-
-userSchema.methods.isValidPassword = async function(password) {
-  return await bcrypt.compareSync(password, this.password);
+userSchema.methods.isValidPassword = function(password) {
+  return bcrypt.compareSync(password, this.passwordHash);
 };
+
+userSchema.virtual('password').set(function(value) {
+  this.passwordHash = bcrypt.hashSync(value, 10);
+});
 
 const User = mongoose.model('User', userSchema);
 
