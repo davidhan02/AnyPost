@@ -5,7 +5,12 @@ import OAuthButton from '../shared/OAuthButton';
 import ServerError from '../shared/ServerError';
 import renderField from '../shared/form/renderField';
 import SubmitButton from '../shared/form/SubmitButton';
-import { emailValidator, passwordValidator } from '../../utils/validators';
+
+import {
+  nameValidator,
+  emailValidator,
+  passwordValidator
+} from '../../utils/validators';
 
 class Register extends Component {
   componentDidMount() {
@@ -36,6 +41,13 @@ class Register extends Component {
         <OAuthButton as="a" href="/auth/google">
           Register with Google
         </OAuthButton>
+        <Field
+          type="text"
+          name="name"
+          label="name"
+          component={renderField}
+          validate={nameValidator}
+        />
         <Field
           type="email"
           name="email"
