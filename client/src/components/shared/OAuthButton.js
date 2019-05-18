@@ -3,12 +3,13 @@ import Button from './Button';
 
 const OAuthButton = styled(Button)`
   width: 100%;
-  margin-bottom: 20px;
-  padding: 12px 30px;
   text-align: center;
-  border: 1px solid ${props => props.theme.mutedText};
-  color: ${props => props.theme.mutedText};
+  padding: 12px 30px;
+  margin-bottom: 20px;
+
   background-color: transparent;
+  color: ${props => props.theme.mutedText};
+  border: 1px solid ${props => props.theme.mutedText};
 
   :hover {
     border: 1px solid ${props => props.theme.accent};
