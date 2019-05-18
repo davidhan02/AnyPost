@@ -44,9 +44,7 @@ const Header = ({ auth, logout, toggleTheme }) => (
         </HeaderNavLink>
       </>
     ) : (
-      <HeaderNavLink as="a" href="/auth/google">
-        Login
-      </HeaderNavLink>
+      <HeaderNavLink to="/login">Login</HeaderNavLink>
     )}
   </Wrapper>
 );

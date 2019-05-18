@@ -5,7 +5,7 @@ const ServerError = styled.span`
   ${fade};
   ${smallFont};
 
-  margin-left: auto;
+  margin: 0 auto;
 
   color: ${props => props.theme.error};
 `;
