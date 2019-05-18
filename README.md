@@ -1,7 +1,8 @@
 # MERN-Stack-Boilerplate
-Concise boilerplate for full stack application using Node/Express/Mongoose for back end, React/Redux for front end.
 
-Live Heroku deployment: https://tranquil-citadel-17264.herokuapp.com/
+Concise boilerplate for full stack application using Node/Express/Mongoose for back end, React/Redux for front end, Passport for authentication.
+
+Live Heroku deployment: https://obscure-cliffs-75848.herokuapp.com/
 
 ## Quick Start
 
@@ -10,9 +11,7 @@ Live Heroku deployment: https://tranquil-citadel-17264.herokuapp.com/
 npm install
 
 # Install dependencies for client
-cd client
-  then
-npm install
+npm install --prefix client
 
 # Run the client & server with concurrently
 npm run dev
