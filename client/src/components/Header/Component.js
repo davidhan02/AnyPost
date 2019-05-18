@@ -34,7 +34,10 @@ const Header = ({ auth, logout, toggleTheme }) => (
           </HeaderNavLink>
         </>
       ) : (
-        <HeaderNavLink to="/login">Login</HeaderNavLink>
+        <>
+          <HeaderNavLink to="/login">Login</HeaderNavLink>
+          <HeaderNavLink to="/register">Register</HeaderNavLink>
+        </>
       )}
     </InnerWrapper>
   </HeaderWrapper>
