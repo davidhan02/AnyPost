@@ -2,6 +2,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider as Theme } from 'styled-components';
 import RegisterContainer from '../Register/Container';
 import GlobalStyle from '../../styles/globalStyle';
+import PrivateRoute from '../shared/PrivateRoute';
 import HeaderContainer from '../Header/Container';
 import LoginContainer from '../Login/Container';
 import history from '../../utils/history';
@@ -27,9 +28,9 @@ const App = ({ dark }) => (
         <Switch>
           <Route path="/login" component={LoginContainer} />
           <Route path="/register" component={RegisterContainer} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route exact path="/" component={Landing} />
           <Route path="/surveys" component={SurveyNew} />
-          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </>
     </Router>
