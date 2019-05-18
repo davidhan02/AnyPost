@@ -1,4 +1,5 @@
 import {
+  SET_ERROR,
   FETCH_USER,
   SET_USER_LOADING,
   CLEAR_USER_LOADING
@@ -25,6 +26,11 @@ export default function(state = initialState, action) {
         loading: true
       };
     case CLEAR_USER_LOADING:
+      return {
+        ...state,
+        loading: false
+      };
+    case SET_ERROR:
       return {
         ...state,
         loading: false

@@ -30,9 +30,9 @@ class Login extends Component {
   };
 
   render() {
-    const { error, loading, handleSubmit } = this.props;
+    const { auth, error, handleSubmit } = this.props;
     return (
-      <Form loading={loading} onSubmit={handleSubmit(this.onSubmit)}>
+      <Form loading={auth.loading} onSubmit={handleSubmit(this.onSubmit)}>
         <OAuthButton as="a" href="/auth/google">
           sign in with google
         </OAuthButton>
