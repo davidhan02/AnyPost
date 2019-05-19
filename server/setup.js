@@ -9,6 +9,7 @@ const app = express();
 
 require('./passport');
 require('./models/user');
+require('./models/post');
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
