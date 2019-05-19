@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/macro';
 import Loading from '../shared/form/Loading';
+import NotFound from '../shared/NotFound';
 import PostListItem from './Item';
 
 const List = styled.ul`
@@ -41,7 +42,7 @@ class PostList extends Component {
   render() {
     const { posts, loading } = this.props;
     if (loading) return <Loading />;
-    if (!posts || posts.length === 0) return <h1>Nothing here</h1>;
+    if (!posts || posts.length === 0) return <NotFound />;
     return <List>{this.mapPosts()}</List>;
   }
 }
