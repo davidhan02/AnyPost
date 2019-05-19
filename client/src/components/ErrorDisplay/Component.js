@@ -1,7 +1,7 @@
 import React from 'react';
-import ErrorBoxMessage from './Message';
+import ErrorDisplayMessage from './Message';
 import styled from 'styled-components/macro';
-import { transition } from '../shared/helpers';
+import { transition } from '../../styles/helpers';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const className = 'message';
@@ -32,14 +32,14 @@ const Wrapper = styled.div`
   }
 `;
 
-class ErrorBox extends React.Component {
+class ErrorDisplay extends React.Component {
   render() {
     return (
       <TransitionGroup component={null}>
         {this.props.error && (
           <CSSTransition classNames={className} timeout={300}>
             <Wrapper>
-              <ErrorBoxMessage>{this.props.error.msg}</ErrorBoxMessage>
+              <ErrorDisplayMessage>{this.props.error.msg}</ErrorDisplayMessage>
             </Wrapper>
           </CSSTransition>
         )}
@@ -48,4 +48,4 @@ class ErrorBox extends React.Component {
   }
 }
 
-export default ErrorBox;
+export default ErrorDisplay;

@@ -1,12 +1,13 @@
 import { Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider as Theme } from 'styled-components';
+import ErrorDisplayContainer from '../ErrorDisplay/Container';
 import RegisterContainer from '../Register/Container';
 import GlobalStyle from '../../styles/globalStyle';
 import HeaderContainer from '../Header/Container';
 import LoginContainer from '../Login/Container';
 import history from '../../utils/history';
-import Body from '../Body';
 import theme from '../../styles/theme';
+import Body from '../Body';
 import React from 'react';
 
 const App = ({ dark }) => (
@@ -15,6 +16,7 @@ const App = ({ dark }) => (
       <>
         <GlobalStyle />
         <HeaderContainer />
+        <ErrorDisplayContainer />
         <Switch>
           <Route path="/login" component={LoginContainer} />
           <Route path="/register" component={RegisterContainer} />

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import { smallFont } from '../../styles/helpers';
 
-const ErrorBoxMessage = styled.div`
+const ErrorDisplayMessage = styled.div`
   ${smallFont};
   position: relative;
   padding: 12px 32px;
@@ -27,4 +27,4 @@ const ErrorBoxMessage = styled.div`
   }
 `;
 
-export default ErrorBoxMessage;
+export default ErrorDisplayMessage;

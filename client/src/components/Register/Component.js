@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import Form from '../shared/form/Form';
 import OAuthButton from '../shared/OAuthButton';
-import ServerError from '../shared/ServerError';
 import renderField from '../shared/form/renderField';
 import SubmitButton from '../shared/form/SubmitButton';
 
@@ -35,7 +34,7 @@ class Register extends Component {
   };
 
   render() {
-    const { error, handleSubmit, loading } = this.props;
+    const { handleSubmit, loading } = this.props;
     return (
       <Form loading={loading} onSubmit={handleSubmit(this.onSubmit)} wide>
         <OAuthButton as="a" href="/auth/google">
@@ -69,7 +68,6 @@ class Register extends Component {
           component={renderField}
           validate={passwordValidator}
         />
-        {error && <ServerError>{error.msg}</ServerError>}
         <SubmitButton type="submit">Register</SubmitButton>
       </Form>
     );

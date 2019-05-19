@@ -5,13 +5,12 @@ import { postRegister, clearError } from '../../actions/auth';
 import Register from './Component';
 import validate from './validate';
 
-const mapStateToProps = ({ error, auth }) => ({
-  error,
+const mapStateToProps = ({ auth }) => ({
   loading: auth.loading,
   isAuthenticated: auth.isAuthenticated
 });
 
-const mapDispatchToProps = { postRegister, clearError };
+const mapDispatchToProps = { postRegister };
 
 const enhance = compose(
   reduxForm({ form: 'register', validate }),
