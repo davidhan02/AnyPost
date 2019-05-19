@@ -6,7 +6,7 @@ export const setPostLoading = () => ({
 });
 
 export const getPosts = (category = '') => async dispatch => {
-  dispatch(setPostLoading);
+  dispatch(setPostLoading());
   try {
     const posts = await axios.get(`/api/posts/${category}`);
     dispatch({
@@ -22,7 +22,7 @@ export const getPosts = (category = '') => async dispatch => {
 };
 
 export const getPostsByUserId = userId => async dispatch => {
-  dispatch(setPostLoading);
+  dispatch(setPostLoading());
   try {
     const posts = await axios.get(`/api/user/${userId}`);
     dispatch({
