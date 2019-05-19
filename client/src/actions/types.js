@@ -14,3 +14,6 @@ export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 export const SET_POST = 'SET_POST';
 export const SET_POST_LIST = 'SET_POST_LIST';
+
+export const CLEAR_POST = 'CLEAR_POST';
+export const CLEAR_POST_LIST = 'CLEAR_POST_LIST';
