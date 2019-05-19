@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getPosts } from '../../actions/post';
+import { getPosts, getPostsByUserId } from '../../actions/post';
 import PostList from './Component';
 
 export const mapStateToProps = ({ post }) => ({
@@ -7,7 +7,7 @@ export const mapStateToProps = ({ post }) => ({
   loading: post.postLoading
 });
 
-const mapDispatchToProps = { getPosts };
+const mapDispatchToProps = { getPosts, getPostsByUserId };
 
 const PostListContainer = connect(
   mapStateToProps,
