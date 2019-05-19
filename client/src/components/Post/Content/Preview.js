@@ -3,10 +3,9 @@ import { overflow } from '../../../styles/helpers';
 
 const PostContentPreview = styled.div`
   ${overflow};
-  max-width: 800px;
-  padding-bottom: 1px;
   font-size: 13px;
-  line-height: 19px;
+  max-width: 800px;
+  line-height: 25px;
   color: ${props => props.theme.mutedText};
 `;
 
