@@ -23,9 +23,9 @@ const Body = () => (
       />
       <Route
         exact
-        path="/u/:username"
+        path="/u/:userId"
         render={({ match }) => (
-          <PostListContainer username={match.params.username} />
+          <PostListContainer userId={match.params.userId} />
         )}
       />
     </MainSection>
