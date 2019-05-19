@@ -7,10 +7,10 @@ export const SET_USER_LOADING = 'SET_USER_LOADING';
 export const CLEAR_USER_LOADING = 'CLEAR_USER_LOADING';
 
 export const SET_POST_LOADING = 'SET_POST_LOADING';
-export const SET_COMMENTS_LOADING = 'SET_COMMENTS_LOADING';
+export const SET_COMMENT_LOADING = 'SET_COMMENT_LOADING';
 
 export const SET_ERROR = 'SET_ERROR';
 export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 export const SET_POST = 'SET_POST';
-export const SET_POSTS = 'SET_POSTS';
+export const SET_POST_LIST = 'SET_POST_LIST';

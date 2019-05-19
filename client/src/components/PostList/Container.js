@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import { fetchPosts, fetchProfile } from '../../actions/posts';
+import { getPosts } from '../../actions/post';
 import PostList from './Component';
 
-export const mapStateToProps = ({ posts }) => ({
-  posts: posts.list,
-  loading: posts.loading
+export const mapStateToProps = ({ post }) => ({
+  posts: post.postList,
+  loading: post.postLoading
 });
 
-const mapDispatchToProps = { fetchPosts, fetchProfile };
+const mapDispatchToProps = { getPosts };
 
 const PostListContainer = connect(
   mapStateToProps,

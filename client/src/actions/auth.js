@@ -14,7 +14,7 @@ export const logoutUser = () => dispatch => {
   dispatch({ type: SET_USER, payload: {} });
 };
 
-export const setUser = () => async dispatch => {
+export const getUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
   dispatch({ type: SET_USER, payload: res.data });
 };
