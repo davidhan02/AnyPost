@@ -20,10 +20,6 @@ class Register extends Component {
     this.redirectIfLoggedIn();
   }
 
-  componentWillUnmount() {
-    this.props.clearError();
-  }
-
   redirectIfLoggedIn() {
     const { history, isAuthenticated } = this.props;
     if (isAuthenticated) history.push('/dashboard');

@@ -1,12 +1,12 @@
-import { SET_ERROR, CLEAR_ERROR } from './types';
+import { SHOW_ERROR, CLEAR_ERROR } from './types';
 
 const clearError = () => ({ type: CLEAR_ERROR });
-const setError = error => ({ type: SET_ERROR, payload: error });
+const showError = error => ({ type: SHOW_ERROR, payload: error });
 
 let timeout;
 
-export const setErrorWithTimeout = error => dispatch => {
-  dispatch(setError(error));
+export const showErrorWithTimeout = error => dispatch => {
+  dispatch(showError(error));
   clearTimeout(timeout);
   timeout = setTimeout(() => dispatch(clearError()), 5000);
 };

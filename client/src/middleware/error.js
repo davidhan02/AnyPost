@@ -1,4 +1,4 @@
-import { clearErrorWithTimeout, setErrorWithTimeout } from '../actions/error';
+import { clearErrorWithTimeout, showErrorWithTimeout } from '../actions/error';
 import {
   SET_ERROR,
   SET_POST,
@@ -18,7 +18,7 @@ export default store => next => action => {
       break;
 
     case SET_ERROR:
-      store.dispatch(setErrorWithTimeout());
+      if (store.getState().error) store.dispatch(showErrorWithTimeout());
       break;
 
     default:

@@ -7,14 +7,15 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 const className = 'message';
 
 const Wrapper = styled.div`
-  ${transition('opacity', 'transform')};
   position: fixed;
-  top: 25px;
   left: 0;
   right: 0;
+  top: 20px;
+
   z-index: 99;
   text-align: center;
   pointer-events: none;
+  ${transition('opacity', 'transform')};
 
   &.${className}-enter {
     opacity: 0;
