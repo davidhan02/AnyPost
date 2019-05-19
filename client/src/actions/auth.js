@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, SET_ERROR, SET_USER_LOADING, CLEAR_ERROR } from './types';
+import { SET_USER, SET_ERROR, SET_USER_LOADING, CLEAR_ERROR } from './types';
 
 export const clearError = () => ({
   type: CLEAR_ERROR
@@ -9,22 +9,22 @@ export const setUserLoading = () => ({
   type: SET_USER_LOADING
 });
 
-export const logout = () => dispatch => {
+export const logoutUser = () => dispatch => {
   axios.get('/api/logout');
-  dispatch({ type: FETCH_USER, payload: {} });
+  dispatch({ type: SET_USER, payload: {} });
 };
 
-export const fetchUser = () => async dispatch => {
+export const setUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
-  dispatch({ type: FETCH_USER, payload: res.data });
+  dispatch({ type: SET_USER, payload: res.data });
 };
 
-export const submitLogin = formValues => async dispatch => {
+export const postLogin = formValues => async dispatch => {
   dispatch(setUserLoading());
   try {
     const user = await axios.post('/api/login', formValues);
     dispatch({
-      type: FETCH_USER,
+      type: SET_USER,
       payload: user.data
     });
   } catch (err) {
@@ -35,12 +35,12 @@ export const submitLogin = formValues => async dispatch => {
   }
 };
 
-export const submitRegister = formValues => async dispatch => {
+export const postRegister = formValues => async dispatch => {
   dispatch(setUserLoading());
   try {
     const user = await axios.post('/api/register', formValues);
     dispatch({
-      type: FETCH_USER,
+      type: SET_USER,
       payload: user.data
     });
   } catch (err) {

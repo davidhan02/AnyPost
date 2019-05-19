@@ -1,6 +1,6 @@
 import {
   SET_ERROR,
-  FETCH_USER,
+  SET_USER,
   SET_USER_LOADING,
   CLEAR_USER_LOADING
 } from '../actions/types';
@@ -14,7 +14,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case FETCH_USER:
+    case SET_USER:
       return {
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload,

@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from './utils/store';
 import { Provider } from 'react-redux';
-import { FETCH_USER } from './actions/types';
+import { SET_USER } from './actions/types';
 import AppContainer from './components/App/Container';
 import * as serviceWorker from './utils/serviceWorker';
 
@@ -24,7 +24,7 @@ const renderApp = () => {
 };
 
 axios.get('/api/current_user').then(res => {
-  store.dispatch({ type: FETCH_USER, payload: res.data });
+  store.dispatch({ type: SET_USER, payload: res.data });
   renderApp();
 });
 

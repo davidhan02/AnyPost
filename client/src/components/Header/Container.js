@@ -1,11 +1,11 @@
 import { toggleTheme } from '../../actions/theme';
-import { logout } from '../../actions/auth';
+import { logoutUser } from '../../actions/auth';
 import { connect } from 'react-redux';
 import Header from './Component';
 
 const mapStateToProps = ({ auth }) => ({ auth });
 
-const mapDispatchToProps = { toggleTheme, logout };
+const mapDispatchToProps = { toggleTheme, logoutUser };
 
 const AppContainer = connect(
   mapStateToProps,

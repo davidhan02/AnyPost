@@ -21,7 +21,7 @@ const InnerWrapper = styled.div`
   }
 `;
 
-const Header = ({ auth, logout, toggleTheme }) => (
+const Header = ({ auth, logoutUser, toggleTheme }) => (
   <HeaderWrapper>
     <InnerWrapper>
       <HeaderLogo />
@@ -29,7 +29,7 @@ const Header = ({ auth, logout, toggleTheme }) => (
       {auth.isAuthenticated ? (
         <>
           <HeaderUsername user={auth.user} />
-          <HeaderNavLink as="span" onClick={logout}>
+          <HeaderNavLink as="span" onClick={logoutUser}>
             Logout
           </HeaderNavLink>
         </>
