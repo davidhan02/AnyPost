@@ -5,10 +5,26 @@ export const setPostLoading = () => ({
   type: SET_POST_LOADING
 });
 
-export const getPosts = () => async dispatch => {
+export const getPosts = (category = '') => async dispatch => {
   dispatch(setPostLoading);
   try {
-    const posts = await axios.get('/api/posts/all');
+    const posts = await axios.get(`/api/posts/${category}`);
+    dispatch({
+      type: SET_POST_LIST,
+      payload: posts.data
+    });
+  } catch (err) {
+    dispatch({
+      type: SET_POST_LIST,
+      payload: null
+    });
+  }
+};
+
+export const getPostsByUserId = userId => async dispatch => {
+  dispatch(setPostLoading);
+  try {
+    const posts = await axios.get(`/api/user/${userId}`);
     dispatch({
       type: SET_POST_LIST,
       payload: posts.data
