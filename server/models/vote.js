@@ -7,4 +7,4 @@ const voteSchema = new Schema({
   _id: false
 });
 
-export default voteSchema;
+module.exports = voteSchema;

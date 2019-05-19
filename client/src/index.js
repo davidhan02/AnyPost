@@ -1,3 +1,4 @@
+import './utils/moment';
 import './styles/style.css';
 import axios from 'axios';
 import React from 'react';

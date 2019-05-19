@@ -29,9 +29,9 @@ class PostList extends Component {
   }
 
   loadPosts = () => {
-    const { userId, category, getPostsByUserId } = this.props;
+    const { userId, category, getPosts, getPostsByUserId } = this.props;
     if (userId) return getPostsByUserId(userId);
-    return this.props.fetchPosts(category);
+    return getPosts(category);
   };
 
   mapPosts = () =>

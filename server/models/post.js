@@ -13,7 +13,7 @@ const postSchema = new Schema({
   },
   author: {
     type: Schema.Types.ObjectId,
-    ref: 'users',
+    ref: 'User',
     required: true
   },
   category: {
@@ -47,7 +47,6 @@ const postSchema = new Schema({
 postSchema.set('toJSON', { getters: true, virtuals: true });
 postSchema.options.toJSON.transform = (doc, ret) => {
   const obj = { ...ret };
-  delete obj.author._id;
   delete obj.__v;
   delete obj._id;
   return obj;
