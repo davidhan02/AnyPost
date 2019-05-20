@@ -21,7 +21,7 @@ class Login extends Component {
   }
 
   onSubmit = formValues => {
-    this.props.postLogin(formValues);
+    this.props.submitLogin(formValues);
   };
 
   render() {

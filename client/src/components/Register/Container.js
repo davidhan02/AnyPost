@@ -1,7 +1,7 @@
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { postRegister } from '../../actions/auth';
+import { submitRegister } from '../../actions/auth';
 import Register from './Component';
 import validate from './validate';
 
@@ -10,7 +10,7 @@ const mapStateToProps = ({ auth }) => ({
   isAuthenticated: auth.isAuthenticated
 });
 
-const mapDispatchToProps = { postRegister };
+const mapDispatchToProps = { submitRegister };
 
 const enhance = compose(
   reduxForm({ form: 'register', validate }),

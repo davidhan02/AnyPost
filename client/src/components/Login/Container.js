@@ -1,7 +1,7 @@
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { postLogin } from '../../actions/auth';
+import { submitLogin } from '../../actions/auth';
 import Login from './Component';
 
 const mapStateToProps = ({ auth }) => ({
@@ -9,7 +9,7 @@ const mapStateToProps = ({ auth }) => ({
   isAuthenticated: auth.isAuthenticated
 });
 
-const mapDispatchToProps = { postLogin };
+const mapDispatchToProps = { submitLogin };
 
 const enhance = compose(
   reduxForm({ form: 'login' }),

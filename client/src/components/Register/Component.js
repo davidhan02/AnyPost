@@ -26,7 +26,7 @@ class Register extends Component {
   }
 
   onSubmit = formValues => {
-    this.props.postRegister(formValues);
+    this.props.submitRegister(formValues);
   };
 
   render() {

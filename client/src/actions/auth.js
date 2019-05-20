@@ -19,7 +19,7 @@ export const getUser = () => async dispatch => {
   dispatch({ type: SET_USER, payload: res.data });
 };
 
-export const postLogin = formValues => async dispatch => {
+export const submitLogin = formValues => async dispatch => {
   dispatch(setUserLoading());
   try {
     const user = await axios.post('/api/login', formValues);
@@ -35,7 +35,7 @@ export const postLogin = formValues => async dispatch => {
   }
 };
 
-export const postRegister = formValues => async dispatch => {
+export const submitRegister = formValues => async dispatch => {
   dispatch(setUserLoading());
   try {
     const user = await axios.post('/api/register', formValues);
