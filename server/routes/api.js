@@ -1,3 +1,4 @@
+const requireLogin = require('../middleware/requireLogin');
 const users = require('./controllers/users');
 const posts = require('./controllers/posts');
 const router = require('express').Router();
@@ -10,6 +11,11 @@ router.get('/current_user', users.currentUser);
 router.get('/posts', posts.listAll);
 router.get('/user/:userId', posts.listByUserId);
 router.get('/posts/:category', posts.listByCategory);
+
+router.param('post', posts.loadPost);
+router.get('/posts/upvote/:post', requireLogin, posts.upvote);
+router.get('/posts/unvote/:post', requireLogin, posts.unvote);
+router.get('/posts/downvote/:post', requireLogin, posts.downvote);
 
 module.exports = app => {
   app.use('/api', router);
