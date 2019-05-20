@@ -5,17 +5,17 @@ exports.redirect = (req, res) => {
   res.redirect(`/u/${req.user.id}`);
 };
 
-exports.currentUser = (req, res) => {
+exports.current = (req, res) => {
   if (!req.user) return res.send({});
   res.send(req.user);
 };
 
-exports.logoutUser = (req, res) => {
+exports.logout = (req, res) => {
   req.logout();
   res.redirect('/');
 };
 
-exports.loginUser = (req, res, next) => {
+exports.login = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (!user) {
       return res.status(400).json(info);
@@ -26,7 +26,7 @@ exports.loginUser = (req, res, next) => {
   })(req, res, next);
 };
 
-exports.registerUser = async (req, res) => {
+exports.register = async (req, res) => {
   const { email } = req.body;
   const user = await User.findOne({ email });
   if (user) {

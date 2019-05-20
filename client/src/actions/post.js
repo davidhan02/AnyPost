@@ -54,7 +54,7 @@ export const submitVote = (postId, vote) => async dispatch => {
   };
   const voteType = voteTypes[vote];
   try {
-    await axios.get(`/api/posts/${voteType}/${postId}`);
+    await axios.get(`/api/post/${voteType}/${postId}`);
   } catch (err) {
     dispatch(setError(err));
   }

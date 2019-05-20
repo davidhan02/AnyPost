@@ -1,22 +1,28 @@
-const requireLogin = require('../middleware/requireLogin');
+const router = require('express').Router();
 const users = require('./controllers/users');
 const posts = require('./controllers/posts');
-const router = require('express').Router();
+const comments = require('./controllers/comments');
+const requireLogin = require('../middleware/requireLogin');
 
-router.post('/login', users.loginUser);
-router.get('/logout', users.logoutUser);
-router.post('/register', users.registerUser);
-router.get('/current_user', users.currentUser);
+router.post('/login', users.login);
+router.get('/logout', users.logout);
+router.post('/register', users.register);
+router.get('/current_user', users.current);
 
 router.get('/posts', posts.listAll);
-router.get('/user/:userId', posts.listByUserId);
+router.get('/users/:userId', posts.listByUserId);
 router.get('/posts/:category', posts.listByCategory);
-router.post('/posts', requireLogin, posts.submitPost);
+router.post('/posts', requireLogin, posts.submit);
 
-router.param('post', posts.loadPost);
-router.get('/posts/upvote/:post', requireLogin, posts.upvote);
-router.get('/posts/unvote/:post', requireLogin, posts.unvote);
-router.get('/posts/downvote/:post', requireLogin, posts.downvote);
+router.param('post', posts.load);
+router.delete('/post/:post', requireLogin, posts.destroy);
+router.get('/post/upvote/:post', requireLogin, posts.upvote);
+router.get('/post/unvote/:post', requireLogin, posts.unvote);
+router.get('/post/downvote/:post', requireLogin, posts.downvote);
+
+router.param('comment', comments.load);
+router.post('/post/:post', requireLogin, comments.submit);
+router.delete('/post/:post/:comment', requireLogin, comments.destroy);
 
 module.exports = app => {
   app.use('/api', router);

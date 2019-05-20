@@ -17,7 +17,7 @@ exports.listByUserId = async (req, res) => {
   res.json(posts);
 };
 
-exports.submitPost = async (req, res, next) => {
+exports.submit = async (req, res, next) => {
   try {
     const post = await Post.create({
       ...req.body,
@@ -29,7 +29,7 @@ exports.submitPost = async (req, res, next) => {
   }
 };
 
-exports.loadPost = async (req, res, next, postId) => {
+exports.load = async (req, res, next, postId) => {
   try {
     req.post = await Post.findById(postId);
     if (!req.post) return res.status(404).json({ msg: 'Post not found' });
