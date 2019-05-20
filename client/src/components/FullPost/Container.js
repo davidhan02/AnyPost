@@ -4,8 +4,8 @@ import FullPost from './Component';
 
 export const mapStateToProps = ({
   auth: { isAuthenticated },
-  post: { post }
-}) => ({ post, isAuthenticated });
+  post: { post, loading }
+}) => ({ post, loading, isAuthenticated });
 
 const mapDispatchToProps = { getPost };
 
