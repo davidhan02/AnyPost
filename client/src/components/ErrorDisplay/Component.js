@@ -33,20 +33,18 @@ const Wrapper = styled.div`
   }
 `;
 
-class ErrorDisplay extends React.Component {
-  render() {
-    return (
-      <TransitionGroup component={null}>
-        {this.props.error && (
-          <CSSTransition classNames={className} timeout={300}>
-            <Wrapper>
-              <ErrorDisplayMessage>{this.props.error.msg}</ErrorDisplayMessage>
-            </Wrapper>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
-    );
-  }
-}
+const ErrorDisplay = ({ error }) => {
+  return (
+    <TransitionGroup component={null}>
+      {error && (
+        <CSSTransition classNames={className} timeout={300}>
+          <Wrapper>
+            <ErrorDisplayMessage>{error.msg || error}</ErrorDisplayMessage>
+          </Wrapper>
+        </CSSTransition>
+      )}
+    </TransitionGroup>
+  );
+};
 
 export default ErrorDisplay;

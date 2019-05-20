@@ -1,8 +1,13 @@
 import axios from 'axios';
-import { SET_POST_LIST, SET_POST_LOADING } from './types';
+import { SET_POST_LIST, SET_POST_LOADING, SET_ERROR } from './types';
 
 export const setPostLoading = () => ({
   type: SET_POST_LOADING
+});
+
+export const setError = err => ({
+  type: SET_ERROR,
+  payload: err.response.data
 });
 
 export const getPosts = (category = '') => async dispatch => {
@@ -14,10 +19,7 @@ export const getPosts = (category = '') => async dispatch => {
       payload: posts.data
     });
   } catch (err) {
-    dispatch({
-      type: SET_POST_LIST,
-      payload: null
-    });
+    dispatch(setError(err));
   }
 };
 
@@ -30,9 +32,20 @@ export const getPostsByUserId = userId => async dispatch => {
       payload: posts.data
     });
   } catch (err) {
-    dispatch({
-      type: SET_POST_LIST,
-      payload: null
-    });
+    dispatch(setError(err));
+  }
+};
+
+export const submitVote = (postId, vote) => async dispatch => {
+  const voteTypes = {
+    '1': 'upvote',
+    '0': 'unvote',
+    '-1': 'downvote'
+  };
+  const voteType = voteTypes[vote];
+  try {
+    await axios.get(`/api/posts/${voteType}/${postId}`);
+  } catch (err) {
+    dispatch(setError(err));
   }
 };
