@@ -13,7 +13,7 @@ export const isEmpty = value =>
   (typeof value === 'object' && Object.keys(value).length === 0) ||
   (typeof value === 'string' && value.trim().length === 0);
 
-export const validUrl = value => {
+export const urlValidator = value => {
   try {
     new URL(value);
     return undefined;
@@ -33,3 +33,9 @@ export const emailValidator = [required, max(32), trimmed];
 export const nameValidator = [required, min(2), max(25), trimmed];
 
 export const passwordValidator = [required, min(6), max(32), trimmed];
+
+export const titleValidator = value =>
+  required(value) || checkMaxLength(value, 100);
+
+export const textValidator = value =>
+  required(value) || checkMinLength(value, 4);
