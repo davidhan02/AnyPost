@@ -16,8 +16,8 @@ class Login extends Component {
   }
 
   redirectIfLoggedIn() {
-    const { history, isAuthenticated } = this.props;
-    if (isAuthenticated) history.push('/dashboard');
+    const { user, history, isAuthenticated } = this.props;
+    if (isAuthenticated) history.push(`/u/${user.id}`);
   }
 
   onSubmit = formValues => {

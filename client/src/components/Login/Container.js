@@ -4,9 +4,10 @@ import { reduxForm } from 'redux-form';
 import { submitLogin } from '../../actions/auth';
 import Login from './Component';
 
-const mapStateToProps = ({ auth }) => ({
-  loading: auth.loading,
-  isAuthenticated: auth.isAuthenticated
+const mapStateToProps = ({ auth: { user, loading, isAuthenticated } }) => ({
+  user,
+  loading,
+  isAuthenticated
 });
 
 const mapDispatchToProps = { submitLogin };

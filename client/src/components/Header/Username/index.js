@@ -11,7 +11,7 @@ const HeaderUsernameText = styled.span`
 `;
 
 const HeaderUsername = ({ user }) => (
-  <HeaderUsernameWrapper to="/dashboard">
+  <HeaderUsernameWrapper to={`/u/${user.id}`}>
     <HeaderUsernameText>{user.name}</HeaderUsernameText>
   </HeaderUsernameWrapper>
 );

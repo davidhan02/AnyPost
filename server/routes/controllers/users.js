@@ -2,7 +2,7 @@ const User = require('../../models/user');
 const passport = require('passport');
 
 exports.redirect = (req, res) => {
-  res.redirect('/dashboard');
+  res.redirect(`/u/${req.user.id}`);
 };
 
 exports.currentUser = (req, res) => {
