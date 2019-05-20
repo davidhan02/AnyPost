@@ -3,6 +3,7 @@ import { ThemeProvider as Theme } from 'styled-components';
 import ErrorDisplayContainer from '../ErrorDisplay/Container';
 import RegisterContainer from '../Register/Container';
 import GlobalStyle from '../../styles/globalStyle';
+import PrivateRoute from '../shared/PrivateRoute';
 import PostFormContainer from '../PostForm/Container';
 import HeaderContainer from '../Header/Container';
 import LoginContainer from '../Login/Container';
@@ -21,7 +22,7 @@ const App = ({ dark }) => (
         <Switch>
           <Route path="/login" component={LoginContainer} />
           <Route path="/register" component={RegisterContainer} />
-          <Route path="/create" component={PostFormContainer} />
+          <PrivateRoute path="/create" component={PostFormContainer} />
           <Route path="/" component={Body} />
         </Switch>
       </>
