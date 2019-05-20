@@ -10,7 +10,7 @@ router.post('/register', users.register);
 router.get('/current_user', users.current);
 
 router.get('/posts', posts.listAll);
-router.get('/users/:userId', posts.listByUserId);
+router.get('/user/:userId', posts.listByUserId);
 router.get('/posts/:category', posts.listByCategory);
 router.post('/posts', requireLogin, posts.submit);
 

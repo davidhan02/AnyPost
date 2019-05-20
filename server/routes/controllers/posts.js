@@ -1,5 +1,25 @@
 const Post = require('../../models/post');
 
+exports.upvote = async (req, res) => {
+  const post = await req.post.vote(req.user.id, 1);
+  res.json(post);
+};
+
+exports.unvote = async (req, res) => {
+  const post = await req.post.vote(req.user.id, 0);
+  res.json(post);
+};
+
+exports.downvote = async (req, res) => {
+  const post = await req.post.vote(req.user.id, -1);
+  res.json(post);
+};
+
+exports.destroy = async (req, res) => {
+  await req.post.remove();
+  res.json({ msg: 'Success' });
+};
+
 exports.listAll = async (req, res) => {
   const posts = await Post.find().sort('-score');
   res.json(posts);
@@ -40,19 +60,4 @@ exports.load = async (req, res, next, postId) => {
     return next(err);
   }
   next();
-};
-
-exports.upvote = async (req, res) => {
-  const post = await req.post.vote(req.user.id, 1);
-  res.json(post);
-};
-
-exports.unvote = async (req, res) => {
-  const post = await req.post.vote(req.user.id, 0);
-  res.json(post);
-};
-
-exports.downvote = async (req, res) => {
-  const post = await req.post.vote(req.user.id, -1);
-  res.json(post);
 };
