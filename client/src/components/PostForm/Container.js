@@ -2,7 +2,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import {
-  validUrl,
+  urlValidator,
   textValidator,
   titleValidator
 } from '../../utils/validators';
@@ -17,7 +17,7 @@ const validate = fields => {
 
   errors.text = textValidator(text);
   errors.title = titleValidator(title);
-  if (fields.url) errors.url = validUrl(fields.url);
+  if (fields.url) errors.url = urlValidator(fields.url);
 
   return errors;
 };

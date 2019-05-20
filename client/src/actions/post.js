@@ -16,7 +16,7 @@ export const submitPost = (formValues, history) => async dispatch => {
     const post = await axios.post('/api/posts', formValues);
     history.push(`/a/${post.category}/${post.id}`);
   } catch (err) {
-    dispatch(setErrors(err));
+    dispatch(setError(err));
   }
 };
 
