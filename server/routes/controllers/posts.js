@@ -37,6 +37,15 @@ exports.listByUserId = async (req, res) => {
   res.json(posts);
 };
 
+exports.showOne = async (req, res) => {
+  const post = await Post.findByIdAndUpdate(
+    req.post.id,
+    { $inc: { views: 1 } },
+    { new: true }
+  );
+  res.json(post);
+};
+
 exports.submit = async (req, res, next) => {
   try {
     const post = await Post.create({

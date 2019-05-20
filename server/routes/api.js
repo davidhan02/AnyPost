@@ -15,7 +15,9 @@ router.get('/posts/:category', posts.listByCategory);
 router.post('/posts', requireLogin, posts.submit);
 
 router.param('post', posts.load);
+router.get('/post/:post', posts.showOne);
 router.delete('/post/:post', requireLogin, posts.destroy);
+
 router.get('/post/upvote/:post', requireLogin, posts.upvote);
 router.get('/post/unvote/:post', requireLogin, posts.unvote);
 router.get('/post/downvote/:post', requireLogin, posts.downvote);
