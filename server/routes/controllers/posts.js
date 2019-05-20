@@ -17,7 +17,7 @@ exports.listByUserId = async (req, res) => {
   res.json(posts);
 };
 
-exports.createPost = async (req, res, next) => {
+exports.submitPost = async (req, res, next) => {
   try {
     const post = await Post.create({
       ...req.body,

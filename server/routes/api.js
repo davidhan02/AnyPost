@@ -5,12 +5,13 @@ const router = require('express').Router();
 
 router.post('/login', users.loginUser);
 router.get('/logout', users.logoutUser);
-router.post('/register', users.register);
+router.post('/register', users.registerUser);
 router.get('/current_user', users.currentUser);
 
 router.get('/posts', posts.listAll);
 router.get('/user/:userId', posts.listByUserId);
 router.get('/posts/:category', posts.listByCategory);
+router.post('/posts', requireLogin, posts.submitPost);
 
 router.param('post', posts.loadPost);
 router.get('/posts/upvote/:post', requireLogin, posts.upvote);
