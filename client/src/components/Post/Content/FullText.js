@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 const PostContentFullText = styled.div`
+  font-size: 15px;
   padding: 8px;
   margin: 8px -8px;
   border-left: none;

@@ -5,13 +5,10 @@ import Form from '../shared/form/Form';
 import renderField from '../shared/form/renderField';
 import SubmitButton from '../shared/form/SubmitButton';
 
-const PostForm = ({ loading, submitPost, handleSubmit }) => {
-  const onSubmit = post => {
-    submitPost(post);
-  };
-
+const PostForm = ({ submitPost, postLoading, handleSubmit }) => {
+  const onSubmit = formValues => submitPost(formValues);
   return (
-    <Form loading={loading} onSubmit={handleSubmit(onSubmit)} wide>
+    <Form loading={postLoading} onSubmit={handleSubmit(onSubmit)} wide>
       <Field
         name="category"
         label="category"

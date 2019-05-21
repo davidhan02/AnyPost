@@ -22,9 +22,7 @@ const validate = fields => {
   return errors;
 };
 
-const mapStateToProps = ({ post }) => ({
-  loading: post.loading
-});
+const mapStateToProps = ({ post: { postLoading } }) => ({ postLoading });
 
 const mapDispatchToProps = { submitPost };
 

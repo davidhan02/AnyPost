@@ -38,8 +38,8 @@ const StyledForm = styled(Form)`
   }
 `;
 
-const CommentForm = ({ submitComment, handleSubmit }) => {
-  const onSubmit = comment => submitComment(comment);
+const CommentForm = ({ id, submitComment, handleSubmit }) => {
+  const onSubmit = formValues => submitComment(formValues, id);
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <CommentFormTextArea name="comment" onSubmit={handleSubmit(onSubmit)} />
