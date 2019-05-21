@@ -6,9 +6,7 @@ import TopMenuCreateButton from './CreateButton';
 
 const Menu = styled.nav`
   display: none;
-  border-left: none;
-  border-right: none;
-  border: 1px solid ${props => props.theme.border};
+  border: none;
 
   @media (max-width: 768px) {
     display: flex;

@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { link, overflow } from '../../../styles/helpers';
+import CommentIcon from '../../shared/CommentIcon';
 import Author from '../../shared/Author';
 
 const Wrapper = styled.div`
@@ -11,6 +12,7 @@ const Wrapper = styled.div`
   margin-top: auto;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 
   & > span > * {
     margin-right: 4px;
@@ -24,11 +26,17 @@ const Wrapper = styled.div`
   & > span {
     color: ${props => props.theme.mutedText};
   }
+  @media (hover: hover) {
+    :hover path {
+      fill: ${props => props.theme.accent};
+    }
+  }
 `;
 
 const PostContentDetail = ({ id, category, commentCount, author, created }) => (
   <Wrapper>
     <Link to={`/a/${category}/${id}`}>
+      <CommentIcon />
       {commentCount} comment{commentCount !== 1 ? 's' : null}
     </Link>
     <span>

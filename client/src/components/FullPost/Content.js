@@ -8,9 +8,9 @@ const Wrapper = styled.div`
   border: 1px solid ${props => props.theme.border};
 
   @media (max-width: 768px) {
+    margin-top: 1px;
     margin-bottom: 0;
     border-radius: 0;
-    border-top: none;
     border-left: none;
     border-right: none;
   }

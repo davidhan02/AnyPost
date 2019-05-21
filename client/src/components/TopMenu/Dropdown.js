@@ -7,7 +7,9 @@ const Dropdown = styled.select`
   width: 100%;
   padding: 8px 16px;
 
-  border: none;
+  border: 1px solid ${props => props.theme.border};
+  border-left: none;
+  border-right: none;
   font-size: 16px;
   font-weight: 600;
   border-radius: 0;
