@@ -23,7 +23,7 @@ const light = {
   ...constants,
   normalText: '#454f5b',
   mutedText: '#818e99',
-  border: '#ebedf0',
+  border: '#d3d5d8',
   accent: '#1890ff',
   pageBackground: '#f4f6f8',
   voteButtonHover: '#f2f2f2',

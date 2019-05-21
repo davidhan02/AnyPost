@@ -5,9 +5,9 @@ import styled from 'styled-components/macro';
 const Wrapper = styled.div`
   padding: 8px;
   margin: 8px -8px;
+  border: 1px solid ${props => props.theme.border};
   border-left: none;
   border-right: none;
-  border: 1px solid ${props => props.theme.border};
   background-color: ${props => props.theme.inputBackground};
 `;
 

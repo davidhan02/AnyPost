@@ -9,9 +9,14 @@ const Wrapper = styled.div`
   ${overflow}
   font-size: 13px;
   margin-top: auto;
+  display: flex;
+  justify-content: space-between;
 
-  & > * {
+  & > span > * {
     margin-right: 4px;
+  }
+  & > span > a {
+    ${link};
   }
   & > a {
     ${link};
@@ -26,10 +31,12 @@ const PostContentDetail = ({ id, category, commentCount, author, created }) => (
     <Link to={`/a/${category}/${id}`}>
       {commentCount} comment{commentCount !== 1 ? 's' : null}
     </Link>
-    <Link to={`/a/${category}`}>/a/{category}</Link>
-    <span>by</span>
-    <Author author={author} />
-    <span>{moment(created).fromNow()}</span>
+    <span>
+      <Link to={`/a/${category}`}>/a/{category}</Link>
+      <span>by</span>
+      <Author author={author} />
+      <span>{moment(created).fromNow()}</span>
+    </span>
   </Wrapper>
 );
 

@@ -6,7 +6,6 @@ import Input from '../shared/form/Input';
 const TextArea = styled(Input)`
   margin: 0;
   border: none;
-  resize: none;
 
   border-radius: 0;
   border-bottom: 1px solid ${props => props.theme.border};
@@ -31,8 +30,8 @@ class CommentFormTextArea extends Component {
     <TextArea
       as="textarea"
       {...field.input}
-      rows="2"
-      placeholder="write your comment"
+      rows="4"
+      placeholder="write your comment here..."
       onKeyDown={this.onKeyDown}
     />
   );

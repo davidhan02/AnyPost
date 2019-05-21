@@ -13,7 +13,8 @@ require('./models/post');
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useFindAndModify: false
 });
 
 const options = { maxAge: 7200000, keys: [keys.cookieKey] };

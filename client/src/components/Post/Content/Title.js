@@ -16,12 +16,23 @@ const Wrapper = styled.div`
     ${props => props.full && 'white-space: unset'};
   }
   a {
+    margin-right: 11px;
     ${link({ underline: true })};
+  }
+  span {
+    font-size: 10px;
+    color: ${props => props.theme.mutedText};
   }
 `;
 
 const renderTitle = ({ id, url, title, category }) => {
-  if (url) return <a href={url}>{title}</a>;
+  if (url)
+    return (
+      <>
+        <a href={url}>{title}</a>
+        <span>[{url}]</span>
+      </>
+    );
 
   return <Link to={`/a/${category}/${id}`}>{title}</Link>;
 };

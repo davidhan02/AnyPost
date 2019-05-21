@@ -15,21 +15,11 @@ const Wrapper = styled.div`
   border-left: 1px solid ${props => props.theme.border};
 `;
 
-const renderContent = ({ url, text, showFullPost }) => {
+const renderContent = ({ text, showFullPost }) => {
   if (showFullPost) {
-    return (
-      <>
-        {url && <PostContentPreview>{url}</PostContentPreview>}
-        <PostContentFullText>{text}</PostContentFullText>
-      </>
-    );
+    return <PostContentFullText>{text}</PostContentFullText>;
   }
-  return (
-    <PostContentPreview>
-      {url && `${url} • `}
-      {text}
-    </PostContentPreview>
-  );
+  return <PostContentPreview>{text}</PostContentPreview>;
 };
 
 const PostContent = ({
@@ -47,7 +37,7 @@ const PostContent = ({
       full={showFullPost}
       {...details}
     />
-    {renderContent({ url, text, showFullPost })}
+    {renderContent({ text, showFullPost })}
     <PostContentDetail commentCount={commentCount} {...details} />
   </Wrapper>
 );
