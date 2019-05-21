@@ -21,6 +21,9 @@ const userSchema = new Schema({
   oauthId: {
     type: String
   },
+  admin: {
+    type: Boolean
+  },
   created: {
     type: Date,
     default: Date.now

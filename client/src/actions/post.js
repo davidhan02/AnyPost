@@ -108,11 +108,11 @@ export const submitComment = (formValues, postId) => async dispatch => {
   }
 };
 
-export const deleteComment = (postId, commentId) => async dispatch => {
-  dispatch(setPostLoading);
+export const deleteComment = commentId => async (dispatch, getState) => {
   try {
+    const { id: postId } = getState().post.post;
     await axios.delete(`/api/post/${postId}/${commentId}`);
-    dispatch(getPosts);
+    dispatch(getPost(postId));
   } catch (err) {
     dispatch(setError(err));
   }
