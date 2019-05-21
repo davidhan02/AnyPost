@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Field } from 'redux-form';
 import categories from '../../utils/categories';
 import Form from '../shared/form/Form';

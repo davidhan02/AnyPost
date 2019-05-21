@@ -1,15 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { link, wideFont, smallFont } from '../../styles/helpers';
+import { link, smallFont } from '../../styles/helpers';
 
 const Button = styled.button`
   ${link};
-  ${smallFont};
 
   border: none;
   outline: none;
 
-  font-size: 13px;
   cursor: pointer;
   margin-left: auto;
 

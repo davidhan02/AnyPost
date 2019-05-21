@@ -2,6 +2,7 @@ import React from 'react';
 import FullPostContent from './Content';
 import NotFound from '../shared/NotFound';
 import Loading from '../shared/form/Loading';
+import FullPostComments from '../FullPost/Comments';
 import FullPostInfoContainer from './Info/Container';
 import CommentFormContainer from '../CommentForm/Container';
 
@@ -31,6 +32,7 @@ class FullPost extends React.Component {
           upvotePercentage={post.upvotePercentage}
         />
         {isAuthenticated && <CommentFormContainer id={post.id} />}
+        <FullPostComments comments={post.comments} />
       </>
     );
   }
