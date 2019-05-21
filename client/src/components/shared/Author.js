@@ -10,6 +10,6 @@ const StyledLink = styled(Link)`
 `;
 
 const Author = ({ author }) =>
-  author ? <StyledLink to={`/u/${author.id}`}>{author.name}</StyledLink> : null;
+  author && <StyledLink to={`/u/${author.id}`}>{author.name}</StyledLink>;
 
 export default Author;
