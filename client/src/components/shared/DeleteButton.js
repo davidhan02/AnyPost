@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { link, smallFont } from '../../styles/helpers';
+import { link } from '../../styles/helpers';
 
 const Button = styled.button`
   ${link};

@@ -5,6 +5,7 @@ import styled from 'styled-components/macro';
 import SidebarContainer from '../Sidebar/Container';
 import FullPostContainer from '../FullPost/Container';
 import PostListContainer from '../PostList/Container';
+import TopMenuContainer from '../TopMenu/Container';
 
 const MainSection = styled.main`
   flex: 1;
@@ -14,6 +15,7 @@ const MainSection = styled.main`
 const Body = () => (
   <BodyWrapper>
     <MainSection>
+      <TopMenuContainer />
       <Route exact path="/" component={PostListContainer} />
       <Route
         exact

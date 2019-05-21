@@ -29,12 +29,14 @@ export const submitPost = formValues => async dispatch => {
 };
 
 export const deletePost = postId => async dispatch => {
-  dispatch(setPostLoading);
-  try {
-    await axios.delete(`/api/post/${postId}`);
-    history.push('/');
-  } catch (err) {
-    dispatch(setError(err));
+  if (window.confirm('Are you sure you want to delete this post?')) {
+    dispatch(setPostLoading);
+    try {
+      await axios.delete(`/api/post/${postId}`);
+      history.push('/');
+    } catch (err) {
+      dispatch(setError(err));
+    }
   }
 };
 
@@ -109,11 +111,13 @@ export const submitComment = (formValues, postId) => async dispatch => {
 };
 
 export const deleteComment = commentId => async (dispatch, getState) => {
-  try {
-    const { id: postId } = getState().post.post;
-    await axios.delete(`/api/post/${postId}/${commentId}`);
-    dispatch(getPost(postId));
-  } catch (err) {
-    dispatch(setError(err));
+  if (window.confirm('Are you sure you want to delete this comment?')) {
+    try {
+      const { id: postId } = getState().post.post;
+      await axios.delete(`/api/post/${postId}/${commentId}`);
+      dispatch(getPost(postId));
+    } catch (err) {
+      dispatch(setError(err));
+    }
   }
 };
