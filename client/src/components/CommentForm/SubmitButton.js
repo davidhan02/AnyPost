@@ -4,11 +4,11 @@ import SubmitButton from '../shared/form/SubmitButton';
 
 const StyledSubmitButton = styled(SubmitButton)`
   margin: 4px;
-  padding: 4px 12px;
+  padding: 8px 10px;
 `;
 
 const CommentFormSubmitButton = () => (
-  <StyledSubmitButton type="submit">submit</StyledSubmitButton>
+  <StyledSubmitButton type="submit">comment</StyledSubmitButton>
 );
 
 export default CommentFormSubmitButton;

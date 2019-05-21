@@ -1,12 +1,11 @@
 import React from 'react';
-import FullPost from './Post';
+import FullPostContent from './Content';
 import NotFound from '../shared/NotFound';
-import FullPostComments from './Comments';
 import Loading from '../shared/form/Loading';
 import FullPostInfoContainer from './Info/Container';
 import CommentFormContainer from '../CommentForm/Container';
 
-class PostDetail extends React.Component {
+class FullPost extends React.Component {
   componentDidMount() {
     this.props.getPost(this.props.id);
   }
@@ -19,12 +18,12 @@ class PostDetail extends React.Component {
   }
 
   render() {
-    const { post, loading, isAuthenticated } = this.props;
-    if (loading) return <Loading />;
+    const { post, postLoading, isAuthenticated } = this.props;
+    if (postLoading) return <Loading />;
     if (!post) return <NotFound />;
     return (
       <>
-        <FullPost {...post} />
+        <FullPostContent {...post} />
         <FullPostInfoContainer
           id={post.id}
           views={post.views}
@@ -32,10 +31,9 @@ class PostDetail extends React.Component {
           upvotePercentage={post.upvotePercentage}
         />
         {isAuthenticated && <CommentFormContainer id={post.id} />}
-        <FullPostComments comments={post.comments} />
       </>
     );
   }
 }
 
-export default PostDetail;
+export default FullPost;

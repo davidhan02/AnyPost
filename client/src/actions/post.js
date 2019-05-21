@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { reset } from 'redux-form';
+import history from '../utils/history';
 import {
   SET_POST,
   SET_ERROR,
@@ -17,7 +18,7 @@ export const setError = err => ({
   payload: err.response.data
 });
 
-export const submitPost = (formValues, history) => async dispatch => {
+export const submitPost = formValues => async dispatch => {
   dispatch(setPostLoading);
   try {
     const post = await axios.post('/api/posts', formValues);
@@ -31,7 +32,7 @@ export const deletePost = postId => async dispatch => {
   dispatch(setPostLoading);
   try {
     await axios.delete(`/api/post/${postId}`);
-    dispatch(getPosts);
+    history.push('/');
   } catch (err) {
     dispatch(setError(err));
   }

@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { link } from '../../styles/helpers';
+import { link, wideFont, smallFont } from '../../styles/helpers';
 
 const Button = styled.button`
   ${link};
+  ${smallFont};
 
   border: none;
   outline: none;
@@ -13,7 +14,11 @@ const Button = styled.button`
   margin-left: auto;
 
   background-color: transparent;
-  color: ${props => props.theme.normalText};
+  color: ${props => props.theme.mutedText};
+
+  :hover {
+    color: ${props => props.theme.error};
+  }
 `;
 
 const DeleteButton = props => <Button onClick={props.onClick}>delete</Button>;

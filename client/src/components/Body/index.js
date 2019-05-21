@@ -2,7 +2,7 @@ import React from 'react';
 import BodyWrapper from './Wrapper';
 import { Route } from 'react-router-dom';
 import styled from 'styled-components/macro';
-
+import FullPostContainer from '../FullPost/Container';
 import PostListContainer from '../PostList/Container';
 
 const MainSection = styled.main`
@@ -26,6 +26,13 @@ const Body = () => (
         path="/u/:userId"
         render={({ match }) => (
           <PostListContainer userId={match.params.userId} />
+        )}
+      />
+      <Route
+        exact
+        path="/a/:category/:post"
+        render={({ match, history }) => (
+          <FullPostContainer id={match.params.post} history={history} />
         )}
       />
     </MainSection>
