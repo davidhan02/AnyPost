@@ -10,7 +10,7 @@ const InnerWrapper = styled.div`
   width: 100%;
   height: 48px;
   margin: 0 auto;
-  max-width: 1050px;
+  max-width: 1150px;
 
   display: flex;
   align-items: stretch;
