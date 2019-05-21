@@ -28,6 +28,7 @@ const Header = ({ auth, logoutUser, toggleTheme }) => (
       <HeaderDarkButton onClick={toggleTheme} />
       {auth.isAuthenticated ? (
         <>
+          <HeaderNavLink to="/create">Create</HeaderNavLink>
           <HeaderUsername user={auth.user} />
           <HeaderNavLink as="span" onClick={logoutUser}>
             Logout

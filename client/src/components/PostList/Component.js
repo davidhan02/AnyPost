@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components/macro';
-import Loading from '../shared/form/Loading';
+import Loading from '../shared/Loading';
 import NotFound from '../shared/NotFound';
 import PostListItem from './Item';
 
