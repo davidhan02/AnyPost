@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   line-height: 25px;
   text-align: center;
   color: ${props => props.theme.normalText};
-  ${props => !props.full && `justify-content: center;`}
+  ${props => !props.full && 'justify-content: center'}
 `;
 
 class PostVote extends Component {
@@ -79,7 +79,7 @@ class PostVote extends Component {
   render() {
     const { isAuthenticated } = this.props;
     return (
-      <Wrapper>
+      <Wrapper full={this.props.full}>
         <PostVoteUpvote
           canVote={!!isAuthenticated}
           didVote={this.state.didUpvote}
