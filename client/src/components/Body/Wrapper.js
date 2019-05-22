@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-const Wrapper = styled.div`
+const BodyWrapper = styled.div`
   display: flex;
   align-items: flex-start;
 
@@ -13,4 +13,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Wrapper;
+export default BodyWrapper;

@@ -14,22 +14,22 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: flex-end;
 
-  & > span > * {
-    margin-right: 4px;
-  }
-  & > span > a {
-    ${link};
-  }
   & > a {
     ${link};
+    @media (hover: hover) {
+      :hover path {
+        fill: ${props => props.theme.accent};
+      }
+    }
   }
   & > span {
     color: ${props => props.theme.mutedText};
   }
-  @media (hover: hover) {
-    :hover path {
-      fill: ${props => props.theme.accent};
-    }
+  & > span > a {
+    ${link};
+  }
+  & > span > * {
+    margin-right: 4px;
   }
 `;
 

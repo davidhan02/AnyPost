@@ -12,6 +12,10 @@ const commentSchema = new Schema({
     type: String,
     required: true
   },
+  score: {
+    type: Number,
+    default: 0
+  },
   created: {
     type: Date,
     default: Date.now

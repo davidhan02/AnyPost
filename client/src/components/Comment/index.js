@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import CommentDetailContainer from './Detail/Container';
+import PostVoteContainer from '../Post/Vote/Container';
+import CommentWrapper from './Wrapper';
 import CommentContent from './Content';
 
 const Wrapper = styled.div`
+  display: flex;
   border-radius: 2px;
+  margin-bottom: 8px;
   border: 1px solid ${props => props.theme.border};
   background-color: ${props => props.theme.foreground};
 
@@ -17,8 +21,11 @@ const Wrapper = styled.div`
 
 const Comment = ({ body, ...details }) => (
   <Wrapper>
-    <CommentDetailContainer {...details} />
-    <CommentContent>{body}</CommentContent>
+    <PostVoteContainer {...details} comment full />
+    <CommentWrapper>
+      <CommentDetailContainer {...details} />
+      <CommentContent>{body}</CommentContent>
+    </CommentWrapper>
   </Wrapper>
 );
 

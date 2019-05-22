@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   line-height: 25px;
   text-align: center;
   color: ${props => props.theme.normalText};
-  ${props => !props.full && 'justify-content: center'}
+  ${props => !props.full && 'justify-content: center'};
 `;
 
 class PostVote extends Component {
@@ -60,9 +60,15 @@ class PostVote extends Component {
   };
 
   castVote = vote => {
-    const { id, submitVote, isAuthenticated } = this.props;
+    const {
+      id,
+      comment,
+      commentVote,
+      submitVote,
+      isAuthenticated
+    } = this.props;
     if (isAuthenticated) {
-      submitVote(id, vote);
+      comment ? commentVote(id, vote) : submitVote(id, vote);
       this.setState({
         score: this.state.score + vote - this.state.didVote,
         didVote: vote,
@@ -77,9 +83,9 @@ class PostVote extends Component {
   downvote = () => this.castVote(this.state.didDownvote ? 0 : -1);
 
   render() {
-    const { isAuthenticated } = this.props;
+    const { full, comment, isAuthenticated } = this.props;
     return (
-      <Wrapper full={this.props.full}>
+      <Wrapper full={full} comment={comment}>
         <PostVoteUpvote
           canVote={!!isAuthenticated}
           didVote={this.state.didUpvote}
