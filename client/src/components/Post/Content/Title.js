@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import { overflow, link } from '../../../styles/helpers';
+import { getDomain } from 'tldjs';
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ const renderTitle = ({ id, url, title, category }) => {
     return (
       <>
         <a href={url}>{title}</a>
-        <span>[{url}]</span>
+        <span>[{getDomain(url)}]</span>
       </>
     );
 

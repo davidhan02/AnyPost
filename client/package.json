@@ -17,7 +17,8 @@
     "redux-form": "^8.2.0",
     "redux-thunk": "^2.3.0",
     "remark-breaks": "^1.0.2",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "tldjs": "^2.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
