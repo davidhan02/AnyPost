@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   text-align: center;
   color: ${props => props.theme.normalText};
   ${props => !props.full && 'justify-content: center'};
+  ${props => props.comment && 'line-height: 13px'};
 `;
 
 class PostVote extends Component {

@@ -7,15 +7,13 @@ import CommentContent from './Content';
 
 const Wrapper = styled.div`
   display: flex;
-  border-radius: 2px;
-  margin-bottom: 8px;
+  border-radius: 0;
   border: 1px solid ${props => props.theme.border};
   background-color: ${props => props.theme.foreground};
 
   @media (max-width: 768px) {
     border-left: none;
     border-right: none;
-    border-radius: 0;
   }
 `;
 
