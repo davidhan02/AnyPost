@@ -96,6 +96,21 @@ export const submitVote = (postId, vote) => async dispatch => {
   }
 };
 
+export const commentVote = (commentId, vote) => async (dispatch, getState) => {
+  const voteTypes = {
+    '1': 'upcomm',
+    '0': 'uncomm',
+    '-1': 'downcomm'
+  };
+  const voteType = voteTypes[vote];
+  const { id: postId } = getState().post.post;
+  try {
+    await axios.get(`/api/post/${voteType}/${postId}/${commentId}`);
+  } catch (err) {
+    dispatch(setError(err));
+  }
+};
+
 export const submitComment = (formValues, postId) => async dispatch => {
   dispatch(setCommentLoading);
   try {

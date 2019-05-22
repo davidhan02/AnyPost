@@ -27,11 +27,22 @@ const commentSchema = new Schema({
   votes: [voteSchema]
 });
 
-commentSchema.set('toJSON', { getters: true });
+commentSchema.set('toJSON', { getters: true, virtuals: true });
 commentSchema.options.toJSON.transform = (doc, ret) => {
   const obj = { ...ret };
   delete obj._id;
   return obj;
 };
+
+commentSchema.pre('save', function(next) {
+  this.wasNew = this.isNew;
+  next();
+});
+
+commentSchema.virtual('upvotePercentage').get(function() {
+  if (this.votes.length === 0) return 0;
+  const upvotes = this.votes.filter(({ vote }) => vote === 1);
+  return Math.floor((upvotes.length / this.votes.length) * 100);
+});
 
 module.exports = commentSchema;

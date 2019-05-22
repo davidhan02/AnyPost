@@ -97,6 +97,26 @@ postSchema.methods.vote = function(user, vote) {
   return this.save();
 };
 
+postSchema.methods.voteComment = function(user, commentId, vote) {
+  const comment = this.comments.id(commentId);
+  if (!comment) throw new Error('No comment matches that ID');
+  const existingVote = comment.votes.find(item => item.user._id.equals(user));
+
+  if (existingVote) {
+    comment.score -= existingVote.vote;
+    if (vote === 0) {
+      comment.votes.pull(existingVote);
+    } else {
+      comment.score += vote;
+      existingVote.vote = vote;
+    }
+  } else if (vote !== 0) {
+    comment.score += vote;
+    comment.votes.push({ user, vote });
+  }
+  return this.save();
+};
+
 postSchema.post('save', function(doc, next) {
   if (this.wasNew) this.vote(this.author._id, 1);
   doc

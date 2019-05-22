@@ -1,6 +1,6 @@
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { submitVote } from '../../../actions/post';
+import { submitVote, commentVote } from '../../../actions/post';
 import PostVote from './Component';
 
 const mapStateToProps = ({ auth }) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = ({ auth }) => ({
   isAuthenticated: auth.isAuthenticated
 });
 
-const mapDispatchToProps = { submitVote };
+const mapDispatchToProps = { submitVote, commentVote };
 
 const enhance = compose(
   connect(
