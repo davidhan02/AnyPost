@@ -9,15 +9,18 @@ import HeaderUsername from './Username';
 const InnerWrapper = styled.div`
   width: 100%;
   height: 48px;
+
   margin: 0 auto;
-  max-width: 1150px;
+  max-width: 1190px;
+  padding: 0 20px;
 
   display: flex;
   align-items: stretch;
   user-select: none;
 
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     height: 40px;
+    padding: 0px;
   }
 `;
 

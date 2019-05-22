@@ -11,7 +11,7 @@ const HeaderWrapper = styled.header`
   border-bottom: 1px solid ${props => props.theme.border};
   background-color: ${props => props.theme.foreground};
 
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     margin-bottom: 16px;
   }
 `;
