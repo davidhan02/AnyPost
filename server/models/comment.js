@@ -34,15 +34,21 @@ commentSchema.options.toJSON.transform = (doc, ret) => {
   return obj;
 };
 
-commentSchema.pre('save', function(next) {
-  this.wasNew = this.isNew;
-  next();
-});
+commentSchema.methods.vote = function(user, vote) {
+  const existingVote = this.votes.find(item => item.user._id.equals(user));
 
-commentSchema.virtual('upvotePercentage').get(function() {
-  if (this.votes.length === 0) return 0;
-  const upvotes = this.votes.filter(({ vote }) => vote === 1);
-  return Math.floor((upvotes.length / this.votes.length) * 100);
-});
+  if (existingVote) {
+    this.score -= existingVote.vote;
+    if (vote === 0) {
+      this.votes.pull(existingVote);
+    } else {
+      this.score += vote;
+      existingVote.vote = vote;
+    }
+  } else if (vote !== 0) {
+    this.score += vote;
+    this.votes.push({ user, vote });
+  }
+};
 
 module.exports = commentSchema;
