@@ -5,10 +5,7 @@ const PostContentPreview = styled.div`
   ${overflow};
   font-size: 13px;
   max-width: 800px;
-  height: 30px;
-
-  display: flex;
-  align-items: center;
+  line-height: 30px;
   color: ${props => props.theme.mutedText};
 `;
 
