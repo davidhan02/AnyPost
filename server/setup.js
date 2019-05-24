@@ -1,3 +1,4 @@
+const sslRedirect = require('heroku-ssl-redirect');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
@@ -24,5 +25,6 @@ app.use(cookieSession(options));
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(sslRedirect());
 
 module.exports = app;
