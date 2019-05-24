@@ -2,17 +2,18 @@ const router = require('express').Router();
 const users = require('./controllers/users');
 const posts = require('./controllers/posts');
 const comments = require('./controllers/comments');
+const validate = require('../middleware/validate');
 const requireLogin = require('../middleware/requireLogin');
 
-router.post('/login', users.login);
 router.get('/logout', users.logout);
-router.post('/register', users.register);
 router.get('/current_user', users.current);
+router.post('/login', validate.login, users.login);
+router.post('/register', validate.register, users.register);
 
 router.get('/posts', posts.listAll);
 router.get('/user/:userId', posts.listByUserId);
 router.get('/posts/:category', posts.listByCategory);
-router.post('/posts', requireLogin, posts.submit);
+router.post('/posts', requireLogin, validate.post, posts.submit);
 
 router.param('post', posts.load);
 router.get('/post/:post', posts.showOne);
@@ -27,7 +28,7 @@ router.get('/post/uncomm/:post/:comment', requireLogin, posts.unComment);
 router.get('/post/downcomm/:post/:comment', requireLogin, posts.downComment);
 
 router.param('comment', comments.load);
-router.post('/post/:post', requireLogin, comments.submit);
+router.post('/post/:post', requireLogin, validate.comment, comments.submit);
 router.delete('/post/:post/:comment', requireLogin, comments.destroy);
 
 module.exports = app => {
