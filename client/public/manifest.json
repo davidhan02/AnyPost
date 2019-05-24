@@ -1,6 +1,6 @@
 {
-  "short_name": "App Boilerplate",
-  "name": "Full Stack MERN App Boilerplate",
+  "short_name": "AnyPost",
+  "name": "Full Stack MERN Blog",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
