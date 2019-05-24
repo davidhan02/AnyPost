@@ -1,6 +1,8 @@
-# MERN-Stack-Boilerplate
+# AnyPost
 
-Concise boilerplate for full stack application using Node/Express/Mongoose for back end, React/Redux for front end, Passport for authentication.
+My attempt at a reddit clone.
+
+Full stack message board application using Node/Express/Mongoose for back end, React/Redux for front end, Passport for authentication.
 
 Live Heroku deployment: https://obscure-cliffs-75848.herokuapp.com/
 
