@@ -7,11 +7,11 @@ import DeleteButton from '../../shared/DeleteButton';
 const Wrapper = styled.div`
   display: flex;
   padding: 8px;
-  padding-bottom: 2px;
   font-size: 13px;
+  border-bottom: 1px solid ${props => props.theme.border};
 `;
 
-const CommentDetail = ({ id, auth, author, created, deleteComment }) => {
+const CommentDetail = ({ id, score, auth, author, created, deleteComment }) => {
   return (
     <Wrapper>
       <Author author={author} />

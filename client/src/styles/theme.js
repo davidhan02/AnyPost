@@ -27,9 +27,9 @@ const light = {
   accent: '#1890ff',
   pageBackground: '#f4f6f8',
   voteButtonHover: '#f2f2f2',
-  foreground: '#ffffff',
-  activeBackground: '#f0f0f0',
-  inputBackground: '#fcfcfc',
+  foreground: '#fcfcfc',
+  activeBackground: '#efefef',
+  inputBackground: '#efefef',
   shadow: 'rgba(0, 0, 0, 0.05)'
 };
 

@@ -4,7 +4,7 @@ import Markdown from '../shared/Markdown';
 
 const Content = styled.div`
   padding: 8px;
-  padding-top: 4px;
+  background-color: ${props => props.theme.inputBackground};
 `;
 
 const CommentContent = props => (
