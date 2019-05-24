@@ -7,6 +7,7 @@ import { wideFont } from '../../styles/helpers';
 const Dropdown = styled.select`
   ${wideFont};
   font-family: Poppins;
+  font-weight: 500;
   width: 100%;
   padding: 8px 16px;
 

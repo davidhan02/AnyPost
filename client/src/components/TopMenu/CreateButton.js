@@ -5,6 +5,7 @@ import Button from '../shared/Button';
 
 const CreateButton = styled(Button)`
   display: flex;
+  font-weight: 500;
   padding: 0 16px;
   border-radius: 0;
   align-items: center;
