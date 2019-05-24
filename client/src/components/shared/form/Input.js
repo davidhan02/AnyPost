@@ -16,7 +16,7 @@ const Input = styled.input`
   display: block;
   width: 100%;
   padding: 8px;
-  font-size: 15px;
+  font-family: Poppins;
   resize: vertical;
   border-radius: 3px;
   outline: none;

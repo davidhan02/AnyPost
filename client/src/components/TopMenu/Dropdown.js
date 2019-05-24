@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import styled from 'styled-components/macro';
 import categories from '../../utils/categories';
 import SelectWrapper from '../shared/form/SelectWrapper';
+import { wideFont } from '../../styles/helpers';
 
 const Dropdown = styled.select`
+  ${wideFont};
+  font-family: Poppins;
   width: 100%;
   padding: 8px 16px;
 
   border: 1px solid ${props => props.theme.border};
   border-left: none;
   border-right: none;
-  font-size: 16px;
-  font-weight: 600;
+
   border-radius: 0;
   appearance: none;
 

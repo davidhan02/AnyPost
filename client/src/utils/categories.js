@@ -3,7 +3,7 @@ const categories = [
   'music',
   'funny',
   'videos',
-  'technology',
+  'tech',
   'news',
   'sports',
   'politics'

@@ -19,6 +19,6 @@ const Logo = styled(Link)`
   }
 `;
 
-const HeaderLogo = () => <Logo to="/">HeaderLogo</Logo>;
+const HeaderLogo = () => <Logo to="/">AnyPost</Logo>;
 
 export default HeaderLogo;

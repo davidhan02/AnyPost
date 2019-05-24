@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Route } from 'react-router-dom';
 import TopMenuDropdown from './Dropdown';
+import TopMenuLabel from './Label';
 import TopMenuCreateButton from './CreateButton';
 
 const Menu = styled.nav`
@@ -15,6 +16,7 @@ const Menu = styled.nav`
 
 const TopMenu = ({ auth }) => (
   <Menu>
+    <TopMenuLabel />
     <Route
       path="/a/:category"
       children={({ match, history }) => (
