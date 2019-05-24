@@ -24,8 +24,8 @@ module.exports = function postValidator(data) {
     errors.msg = 'Post text field is required';
   }
 
-  if (!Validator.isLength(data.text, { min: 3, max: 300 })) {
-    errors.msg = 'Post must be between 3 and 300 characters';
+  if (!Validator.isLength(data.text, { min: 3, max: 1500 })) {
+    errors.msg = 'Post must be between 3 and 1500 characters';
   }
 
   return {

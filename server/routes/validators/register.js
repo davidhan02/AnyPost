@@ -37,10 +37,6 @@ module.exports = function registerValidator(data) {
     errors.msg = 'Matching password field is required';
   }
 
-  if (Validator.equals(data.password, data.password2)) {
-    errors.msg = 'Password fields must match';
-  }
-
   return {
     errors,
     isValid: isEmpty(errors)
