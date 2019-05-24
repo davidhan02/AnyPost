@@ -4,6 +4,7 @@ import Markdown from '../shared/Markdown';
 
 const Content = styled.div`
   padding: 8px;
+  font-size: 13px;
   padding-top: 4px;
 `;
 

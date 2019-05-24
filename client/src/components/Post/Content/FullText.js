@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 
 const Wrapper = styled.div`
   padding: 8px;
+  font-size: 13px;
   margin: 8px -8px;
   border: 1px solid ${props => props.theme.border};
   border-left: none;
