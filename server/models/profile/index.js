@@ -46,7 +46,7 @@ const profileSchema = new Schema({
 profileSchema.set('toJSON', { getters: true });
 profileSchema.options.toJSON.transform = (doc, ret) => {
   const obj = { ...ret };
-  delete obj.id;
+  delete obj._id;
   delete obj.__v;
   return obj;
 };

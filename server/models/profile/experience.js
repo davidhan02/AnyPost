@@ -29,4 +29,11 @@ const expSchema = new Schema({
   }
 });
 
+expSchema.set('toJSON', { getters: true });
+expSchema.options.toJSON.transform = (doc, ret) => {
+  const obj = { ...ret };
+  delete obj._id;
+  return obj;
+};
+
 module.exports = expSchema;

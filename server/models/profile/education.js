@@ -30,4 +30,11 @@ const eduSchema = new Schema({
   }
 });
 
+eduSchema.set('toJSON', { getters: true });
+eduSchema.options.toJSON.transform = (doc, ret) => {
+  const obj = { ...ret };
+  delete obj._id;
+  return obj;
+};
+
 module.exports = eduSchema;
