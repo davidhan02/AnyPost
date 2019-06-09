@@ -23,12 +23,11 @@ router.get('/post/upvote/:post', requireLogin, posts.upvote);
 router.get('/post/unvote/:post', requireLogin, posts.unvote);
 router.get('/post/downvote/:post', requireLogin, posts.downvote);
 
-router.get('/post/upcomm/:post/:comment', requireLogin, posts.upComment);
-router.get('/post/uncomm/:post/:comment', requireLogin, posts.unComment);
-router.get('/post/downcomm/:post/:comment', requireLogin, posts.downComment);
-
 router.param('comment', comments.load);
 router.post('/post/:post', requireLogin, validate.comment, comments.submit);
+router.get('/post/upcomm/:post/:comment', requireLogin, comments.upComment);
+router.get('/post/uncomm/:post/:comment', requireLogin, comments.unComment);
+router.get('/post/downcomm/:post/:comment', requireLogin, comments.downComment);
 router.delete('/post/:post/:comment', requireLogin, comments.destroy);
 
 module.exports = app => {

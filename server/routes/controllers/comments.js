@@ -1,3 +1,18 @@
+exports.upComment = async (req, res) => {
+  const post = await req.post.voteComment(req.user.id, req.params.comment, 1);
+  res.json(post);
+};
+
+exports.unComment = async (req, res) => {
+  const post = await req.post.voteComment(req.user.id, req.params.comment, 0);
+  res.json(post);
+};
+
+exports.downComment = async (req, res) => {
+  const post = await req.post.voteComment(req.user.id, req.params.comment, -1);
+  res.json(post);
+};
+
 exports.load = async (req, res, next, id) => {
   try {
     req.comment = await req.post.comments.id(id);

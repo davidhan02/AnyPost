@@ -15,21 +15,6 @@ exports.downvote = async (req, res) => {
   res.json(post);
 };
 
-exports.upComment = async (req, res) => {
-  const post = await req.post.voteComment(req.user.id, req.params.comment, 1);
-  res.json(post);
-};
-
-exports.unComment = async (req, res) => {
-  const post = await req.post.voteComment(req.user.id, req.params.comment, 0);
-  res.json(post);
-};
-
-exports.downComment = async (req, res) => {
-  const post = await req.post.voteComment(req.user.id, req.params.comment, -1);
-  res.json(post);
-};
-
 exports.destroy = async (req, res) => {
   await req.post.remove();
   res.json({ msg: 'Success' });
