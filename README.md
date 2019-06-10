@@ -1,7 +1,5 @@
 # AnyPost
 
-My attempt at a reddit clone.
-
 Full stack message board application using Node/Express/Mongoose for back end, React/Redux for front end, Passport for authentication.
 
 Live Heroku deployment: https://anypost.herokuapp.com/
