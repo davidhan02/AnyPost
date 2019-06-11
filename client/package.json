@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "http-proxy-middleware": "^0.19.1",
     "moment": "^2.24.0",
     "react": "^16.8.6",
